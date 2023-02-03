@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -37,20 +38,35 @@ namespace Skills
     {
         private List<Skill> m_skills = new();
 
-        public static SkillManager instance;
+        public static SkillManager Instance;
+        public static Action<Skill> OnSkillAdded;
 
         #region Unity Methods
 
         private void Awake()
         {
             //"Singleton"
-            if (instance != this)
-                instance = this;
+            if (Instance != this)
+                Instance = this;
+        }
+
+        private void Start()
+        {
+            OnSkillAdded += AddSkill;
+        }
+
+        private void OnDestroy()
+        {
+            OnSkillAdded -= AddSkill;
         }
 
         #endregion Unity Methods
 
-        public void AddSkill(Skill skill) => m_skills.Add(skill);
+        public void AddSkill(Skill skill)
+        {
+            if (skill) m_skills.Add(skill);
+            else Debug.LogWarning($"Tried to add {skill.Name} and failed!");
+        }
 
         public float GetAttributeModifier(Attribute attribute)
         {

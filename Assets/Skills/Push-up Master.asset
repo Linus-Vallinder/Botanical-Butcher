@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
-  m_Name: Push Up Master
+  m_Name: Push-up Master
   m_EditorClassIdentifier: 
-  Name: Push Up Master
+  Name: Push-up Master
+  PowerLevel: 0
   Description: Finally! You can do ONE push up!
   SkillUsagePrompts: []
   Stat:

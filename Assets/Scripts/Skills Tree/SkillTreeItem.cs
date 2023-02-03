@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SkillTreeItem : MonoBehaviour
+namespace Skills
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SkillTreeItem : MonoBehaviour, IPointerClickHandler
     {
-        
-    }
+        [Header("Skill Tree Item Options")]
+        [SerializeField] private Skill m_skill;
+        [Space, SerializeField] private Sprite m_icon;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Debug.Log("Adding skill!");
+            SkillManager.OnSkillAdded(m_skill);
+        }
     }
 }
