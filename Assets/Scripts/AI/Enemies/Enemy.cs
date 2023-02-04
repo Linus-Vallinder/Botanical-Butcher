@@ -49,6 +49,7 @@ public class Enemy : ScriptableObject
     [Space]
     public int maxHealth;
     public int attackPower;
+    public int roots;
 
     [Space]
     public Vector2 XPDropRange = new();
