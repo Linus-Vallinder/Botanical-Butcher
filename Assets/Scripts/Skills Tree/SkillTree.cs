@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class SkillTree : MonoBehaviour
+namespace Skills
 {
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public class TreeTypeData
     {
-        
+        public Skill RootSkill;
+        public List<Skill> Skills = new();
+        public Vector3 StartPosition = Vector3.zero;
     }
 
-    // Update is called once per frame
-    void Update()
+    public class SkillTree : MonoBehaviour
     {
-        
+        [Header("Skill Tree Options")]
+        [SerializeField] private List<TreeTypeData> Trees = new();
+
+        [Space, SerializeField] private int MaxWidth = 4;
+
+        public void GenerateTree(List<Skill> skills)
+        {
+
+        }
     }
 }

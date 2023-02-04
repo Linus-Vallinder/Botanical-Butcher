@@ -9,13 +9,16 @@ namespace Skills
         [Header("Skill Options")]
         public string Name;
         public int PowerLevel; //Used for random generation of skill tree
+        public Sprite Icon;
 
         [Space, TextArea] public string Description;
 
         [Space, Header("Usage Promtps")]
         public List<string> SkillUsagePrompts = new();
 
-        [Header("Stats")]
-        public Stat Stat;
+        [Header("Stat Options")]
+
+        public bool ShowStats;
+        [Space] public Stat Stat;
     }
 }
