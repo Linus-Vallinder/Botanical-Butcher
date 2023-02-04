@@ -14,14 +14,21 @@ public class SkillButtonAnimations : MonoBehaviour
     [SerializeField] SkinnedMeshRenderer infoPanel;
 
     [SerializeField] AnimationCurve[] rootOpenCurve;
+    [SerializeField] AnimationCurve rootOpenScaleCurve;
     [SerializeField] float rootOpenSpeed;
+    [SerializeField] float rootOpenScale;
     [SerializeField] AnimationCurve infoPanelOpenCurve;
     [SerializeField] float infoPanelOpenSpeed;
+    [SerializeField] float infoPanelOpenScale;
+
+    [SerializeField] ParticleSystem[] growParticles;
 
     float rootTarget = 1.0f;
     float rootValue = 1.0f;
     float infoTarget = 1.0f;
     float infoValue = 1.0f;
+
+    float startScale;
 
     void Start()
     {
@@ -31,6 +38,7 @@ public class SkillButtonAnimations : MonoBehaviour
         }
         infoPanel.SetBlendShapeWeight(0, 100.0f);
         skillInfo.alpha = 0.0f;
+        startScale = transform.localScale.x;
     }
 
     void Update()
@@ -62,14 +70,18 @@ public class SkillButtonAnimations : MonoBehaviour
         {
             infoValue += Time.deltaTime * infoPanelOpenSpeed;
             infoValue = Mathf.Clamp01(infoValue);
-            infoPanel.SetBlendShapeWeight(0, infoPanelOpenCurve.Evaluate(infoValue) * 100.0f);
+            float curveValue = infoPanelOpenCurve.Evaluate(infoValue);
+            infoPanel.SetBlendShapeWeight(0, curveValue * 100.0f);
+            transform.localScale = Vector3.one * Mathf.Lerp(startScale, startScale * infoPanelOpenScale, 1.0f - curveValue);
             skillInfo.alpha = 1.0f - infoValue;
         }
         else if (infoTarget < infoValue)
         {
             infoValue -= Time.deltaTime * infoPanelOpenSpeed;
             infoValue = Mathf.Clamp01(infoValue);
-            infoPanel.SetBlendShapeWeight(0, infoPanelOpenCurve.Evaluate(infoValue) * 100.0f);
+            float curveValue = infoPanelOpenCurve.Evaluate(infoValue);
+            infoPanel.SetBlendShapeWeight(0, curveValue * 100.0f);
+            transform.localScale = Vector3.one * Mathf.Lerp(startScale, startScale * infoPanelOpenScale, 1.0f - curveValue);
             skillInfo.alpha = 1.0f - infoValue;
         }
 
@@ -90,6 +102,7 @@ public class SkillButtonAnimations : MonoBehaviour
             {
                 roots[i].SetBlendShapeWeight(0, rootOpenCurve[i].Evaluate(rootValue) * 100.0f);
             }
+            transform.localScale = Vector3.one * Mathf.Lerp(startScale, startScale * rootOpenScale, rootOpenScaleCurve.Evaluate(rootValue));
         }
     }
 
@@ -115,6 +128,11 @@ public class SkillButtonAnimations : MonoBehaviour
     {
         Debug.Log("Unlock skill");
         rootTarget = 0.0f;
+        CloseInfoPanel();
+        for(int i = 0; i < growParticles.Length; ++i)
+        { 
+            growParticles[i].Play();
+        }
     }
 
     public void LockSkill()
