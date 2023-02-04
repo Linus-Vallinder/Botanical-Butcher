@@ -15,6 +15,9 @@ namespace Skills
 
         [Space, SerializeField] private List<SkillTreeItem> m_prerequisite = new();
 
+        [Header("Effects")]
+        [SerializeField] private LineParticles m_linePrefab;
+
         public bool Unlocked { get; private set; } = false;
 
         public Skill GetSkill() => m_skill;
@@ -46,12 +49,10 @@ namespace Skills
             //Draw Lines to Prerequisite skills
             foreach (var preSkill in m_prerequisite)
             {
-                var line = new GameObject("line");
-                line.transform.SetParent(transform, false);
-                var lineComp = line.AddComponent<LineRenderer>();
-                lineComp.SetPositions(new Vector3[2] { transform.position, preSkill.transform.position });
-                lineComp.startWidth = .1f;
-                lineComp.endWidth = .1f;
+                var line = Instantiate(m_linePrefab);
+                line.transform.parent = transform;
+                var lineComp = line.GetComponent<LineRenderer>();
+                lineComp.SetPositions(new Vector3[] { transform.position, preSkill.transform.position });
             }
         }
 

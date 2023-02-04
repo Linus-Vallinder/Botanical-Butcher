@@ -10945,6 +10945,7 @@ MonoBehaviour:
   m_description: {fileID: 191783517844620491}
   m_iconRenderer: {fileID: 6240404209428413134}
   m_prerequisite: []
+  m_linePrefab: {fileID: 7204624847697517657, guid: 0581a101aa4219245b2bf32c480ea40f, type: 3}
 --- !u!61 &1294442835100463058
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -70,14 +70,14 @@ namespace Skills
                 for (int j = 0; j < layerAmounts; j++)
                 {
                     //Get Spawn Position
-                    var posX = j * m_skillOffset.x;
+                    var posX = (j * m_skillOffset.x);
 
                     //posX *= m_skillOffset.x;
                     var posY = (i + 1) * m_skillOffset.y;
                     
                     //Spawn Skill
                     var skill = GetRandomSkill(skills);
-                    var item = SpawnItem(skill, new Vector2(posX, -posY));
+                    var item = SpawnItem(skill, new Vector3(posX, -posY) + tree.StartPosition);
 
                     items.Add(item);
                     skills.Remove(skill);
@@ -99,8 +99,6 @@ namespace Skills
 
                     item.DrawLines();
                 }
-
-                Debug.Log($"Tree has {powerLevels} power levels!");
             }
         }
     }
