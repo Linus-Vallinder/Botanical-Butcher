@@ -1,9 +1,9 @@
-using UnityEngine;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
-enum HeroState
+internal enum HeroState
 {
     Idle,
     Travel,
@@ -19,7 +19,7 @@ public class Hero : Singleton<Hero>
 
     public int MaxHealth { get; private set; } = 100;
     public int CurrentHealth { get; private set; }
-    
+
     public int XP { get; private set; }
     public int Gold { get; private set; }
 
@@ -29,13 +29,13 @@ public class Hero : Singleton<Hero>
     private TextBox m_console;
     private Enemy currentTargetEnemy;
 
-    bool inAction = false;
-    bool inCombat = false;
-    bool attacking = false;
+    private bool inAction = false;
+    private bool inCombat = false;
+    private bool attacking = false;
 
-    bool isHerosTurn = false;
+    private bool isHerosTurn = false;
 
-    HeroState m_currentState;
+    private HeroState m_currentState;
 
     #region Unity Methods
 
@@ -59,7 +59,7 @@ public class Hero : Singleton<Hero>
             {
                 StartCoroutine(Attack());
             }
-            else if(!EncounterManager.Instance.IsAttacking)
+            else if (!EncounterManager.Instance.IsAttacking)
             {
                 StartCoroutine(EncounterManager.Instance.Attack());
             }
@@ -72,12 +72,15 @@ public class Hero : Singleton<Hero>
             case HeroState.Idle:
                 HeroIdle();
                 break;
+
             case HeroState.Travel:
                 HeroTravel();
                 break;
+
             case HeroState.Wander:
                 HeroWander();
                 break;
+
             case HeroState.Encounter:
                 HeroEncounter();
                 break;
@@ -92,7 +95,7 @@ public class Hero : Singleton<Hero>
         attacking = false;
     }
 
-    #endregion
+    #endregion Unity Methods
 
     public Location GetRandomLocation(List<Location> locations)
     => locations[UnityEngine.Random.Range(0, locations.Count)];
@@ -103,19 +106,19 @@ public class Hero : Singleton<Hero>
     private void InitHero()
     {
         CurrentHealth = MaxHealth;
-        CurrentLocation = GetRandomLocation(StartingLocations); 
+        CurrentLocation = GetRandomLocation(StartingLocations);
     }
 
-    void HeroIdle()
+    private void HeroIdle()
     {
         var selectedAction = Random.Range(0, 0);
         inAction = true;
-        if(m_actionsLeft > 0)
+        if (m_actionsLeft > 0)
         {
             m_actionsLeft--;
 
             var chance = Random.Range(0, 100);
-            if(CurrentLocation.EncounterProbability >= chance)
+            if (CurrentLocation.EncounterProbability >= chance)
             {
                 currentTargetEnemy = CurrentLocation.GetRandomEnemy();
                 StartCoroutine(ChangeState(1, HeroState.Encounter));
@@ -127,6 +130,7 @@ public class Hero : Singleton<Hero>
                 case 0:
                     StartCoroutine(ChangeState(1, HeroState.Wander));
                     return;
+
                 default: return;
             }
         }
@@ -137,7 +141,7 @@ public class Hero : Singleton<Hero>
         }
     }
 
-    void HeroTravel()
+    private void HeroTravel()
     {
         inAction = true;
         CurrentLocation = CurrentLocation.GetRandomAccessibleLocation();
@@ -146,38 +150,29 @@ public class Hero : Singleton<Hero>
         StartCoroutine(ChangeState(3, HeroState.Idle));
     }
 
-    void HeroEncounter()
+    private void HeroEncounter()
     {
-        Debug.Log($"You have Encountered a {enemy}");
-        yield return new WaitForSeconds(2.5f);
-        AddXP(13);
-        inAction = false;
-    }
-
-    public void AddXP(int amountToAdd)
-	{
-		XP += amountToAdd;
-		CounterAnimation.Instance.SetCounter(XP);
-		Debug.Log("New XP: " + XP);
-	}
-
-    private IEnumerator WanderLocation()
         inAction = true;
         inCombat = true;
         m_console.AddLine($"The hero has encounterd a {currentTargetEnemy.name}");
         EncounterManager.Instance.InstantiateEnemy(currentTargetEnemy);
-        //currentTargetEnemy = null;
-        //StartCoroutine(ChangeState(Random.Range(3, 5), HeroState.Idle));
     }
 
-    void HeroWander()
+    public void AddXP(int amountToAdd)
+    {
+        XP += amountToAdd;
+        CounterAnimation.Instance.SetCounter(XP);
+        Debug.Log("New XP: " + XP);
+    }
+
+    private void HeroWander()
     {
         inAction = true;
         m_console.AddLine($"The hero is taking a stroll around {CurrentLocation.Name} and taking in the sights");
         StartCoroutine(ChangeState(Random.Range(3, 5), HeroState.Idle));
     }
 
-    IEnumerator ChangeState(float time, HeroState state)
+    private IEnumerator ChangeState(float time, HeroState state)
     {
         yield return new WaitForSeconds(time);
         m_currentState = state;
