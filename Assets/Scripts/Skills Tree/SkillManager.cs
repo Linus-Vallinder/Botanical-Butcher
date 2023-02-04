@@ -74,8 +74,9 @@ namespace Skills
         public float GetAttributeModifier(Attribute attribute)
         {
             var total = 0f;
-            var attributes = m_skills.Where(x => x.Stat.attribute == attribute).ToList();
-            attributes.ForEach(skill => { if (skill.Stat.attribute == attribute) total += skill.Stat.Modifier; });
+            m_skills.ForEach(skill => {
+                total += skill.GetAttributeModifier(attribute);
+            });
             return total;
         }
     }
