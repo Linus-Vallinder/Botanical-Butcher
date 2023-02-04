@@ -148,6 +148,20 @@ public class Hero : Singleton<Hero>
 
     void HeroEncounter()
     {
+        Debug.Log($"You have Encountered a {enemy}");
+        yield return new WaitForSeconds(2.5f);
+        AddXP(13);
+        inAction = false;
+    }
+
+    public void AddXP(int amountToAdd)
+	{
+		XP += amountToAdd;
+		CounterAnimation.Instance.SetCounter(XP);
+		Debug.Log("New XP: " + XP);
+	}
+
+    private IEnumerator WanderLocation()
         inAction = true;
         inCombat = true;
         m_console.AddLine($"The hero has encounterd a {currentTargetEnemy.name}");
