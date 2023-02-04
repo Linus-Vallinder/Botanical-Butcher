@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -140,6 +139,4 @@ public class SkillButtonAnimations : MonoBehaviour
         Debug.Log("Lock skill");
         rootTarget = 1.0f;
     }
-
-
 }

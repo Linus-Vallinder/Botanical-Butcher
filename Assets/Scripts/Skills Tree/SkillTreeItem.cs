@@ -5,7 +5,7 @@ using TMPro;
 
 namespace Skills
 {
-    public class SkillTreeItem : MonoBehaviour, IPointerClickHandler
+    public class SkillTreeItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("Skill Tree Item Options")]
         [SerializeField] private Skill m_skill;
@@ -21,6 +21,17 @@ namespace Skills
         public List<SkillTreeItem> GetPrerequisite() => m_prerequisite;
         public void SetPrerequisite(SkillTreeItem item) => m_prerequisite.Add(item);
 
+        private SkillButtonAnimations m_animations;
+
+        #region Unity Methods
+
+        private void Awake()
+        {
+            m_animations = GetComponentInChildren<SkillButtonAnimations>();    
+        }
+
+        #endregion
+
         public void InitSkill(Skill skill)
         {
             m_skill = skill;
@@ -28,10 +39,9 @@ namespace Skills
             m_name.text = m_skill.Name;
             m_description.text = m_skill.Description;
             m_iconRenderer.sprite = m_skill.Icon;
-            DrawLines();
         }
 
-        private void DrawLines()
+        public void DrawLines()
         {
             //Draw Lines to Prerequisite skills
             foreach (var preSkill in m_prerequisite)
@@ -50,10 +60,18 @@ namespace Skills
         public void OnPointerClick(PointerEventData eventData) 
         => Unlock();
 
+        public void OnPointerEnter(PointerEventData eventData)
+        => m_animations.OpenInfoPanel();
+
+        public void OnPointerExit(PointerEventData eventData)
+        => m_animations.CloseInfoPanel();
+
         #endregion IPointer Interface Implementation
 
         private void Unlock()
         {
+            Debug.LogWarning(Unlocked);
+
             if (Unlocked || !SkillManager.Instance.CanUnlock(this))
             {
                 Debug.LogWarning("Cannot unlock this skill, it is either already unlocked or you do not have the right prerequisites");
@@ -61,6 +79,7 @@ namespace Skills
             }
 
             SkillManager.OnSkillAdded(m_skill);
+            m_animations.UnlockSkill();
             Unlocked = true;
 
             Debug.Log($"You have unlocked the [{m_skill.Name}] skill!");

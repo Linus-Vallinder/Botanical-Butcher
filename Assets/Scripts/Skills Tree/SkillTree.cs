@@ -37,8 +37,8 @@ namespace Skills
             {
                 var item = Instantiate(m_skillTreeItemPrefab);
                 item.transform.position = pos;
-
                 item.InitSkill(skill);
+
                 return item;
             }
 
@@ -46,12 +46,19 @@ namespace Skills
             => skill.ToList()[Random.Range(0, skill.Count())];
 
             var powerLevels = tree.Skills.Select(x => x.PowerLevel).Distinct().Count();
-
-            if (tree.RootSkill) SpawnItem(tree.RootSkill, tree.StartPosition);
-            else if (tree.Skills.Count != 0) SpawnItem(tree.Skills[0], tree.StartPosition);
-            else Debug.LogWarning("Can not generate tree! Skills are required!");
-
             var items = new List<SkillTreeItem>();
+
+            if (tree.RootSkill)
+            {
+                var root = SpawnItem(tree.RootSkill, tree.StartPosition);
+                items.Add(root);
+            }
+            else if (tree.Skills.Count != 0)
+            {
+                var root = SpawnItem(tree.Skills[0], tree.StartPosition);
+                items.Add(root);
+            }
+            else Debug.LogWarning("Can not generate tree! Skills are required!");
 
             for (int i = 0; i < powerLevels; i++)
             {
@@ -63,7 +70,9 @@ namespace Skills
                 for (int j = 0; j < layerAmounts; j++)
                 {
                     //Get Spawn Position
-                    var posX = (j) * m_skillOffset.x;
+                    var posX = j * m_skillOffset.x;
+
+                    //posX *= m_skillOffset.x;
                     var posY = (i + 1) * m_skillOffset.y;
                     
                     //Spawn Skill
@@ -78,6 +87,17 @@ namespace Skills
                     if (skill.PowerLevel == 0) continue;
                     skillsAbove = items.Where(x => x.GetSkill().PowerLevel == skill.PowerLevel - 1).ToList();
                     if (skillsAbove.Count == 1) item.SetPrerequisite(skillsAbove[0]);
+                    else
+                    {
+                        for (int l  = 0; l < Random.Range(1, 2); l++)
+                        {
+                            var randomSkill = skillsAbove[Random.Range(0, skillsAbove.Count)];
+                            item.SetPrerequisite(randomSkill);
+                            skillsAbove.Remove(randomSkill);
+                        }
+                    }
+
+                    item.DrawLines();
                 }
 
                 Debug.Log($"Tree has {powerLevels} power levels!");

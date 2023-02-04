@@ -20,5 +20,5 @@ MonoBehaviour:
   ShowStats: 0
   Stat:
     name: 
-    attribute: 0
-    Modifier: -100
+    attribute: 4
+    Modifier: 20

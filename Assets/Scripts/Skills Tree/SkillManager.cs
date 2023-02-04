@@ -34,24 +34,17 @@ namespace Skills
         public float Modifier;
     }
 
-    public class SkillManager : MonoBehaviour
+    public class SkillManager : Singleton<SkillManager>
     {
-        private List<Skill> m_skills = new();
+        public List<Skill> m_skills = new();
 
-        public static SkillManager Instance;
         public static Action<Skill> OnSkillAdded;
 
         #region Unity Methods
 
-        private void Awake()
-        {
-            //"Singleton"
-            if (Instance != this)
-                Instance = this;
-        }
-
         private void Start()
         {
+            m_skills.Clear();
             OnSkillAdded += AddSkill;
         }
 
@@ -63,20 +56,19 @@ namespace Skills
         #endregion Unity Methods
 
         public void AddSkill(Skill skill)
-        {
-            if (skill) m_skills.Add(skill);
-            else Debug.LogWarning($"Tried to add {skill.Name} and failed!");
-        }
+        => m_skills.Add(skill);
 
         public bool CanUnlock(SkillTreeItem skillItem)
         {
+            bool result = true;
             var skills = skillItem.GetPrerequisite();
+
             foreach (var skill in skills)
             {
-                if (!m_skills.Contains(skill.GetSkill())) return false;
+                if (!m_skills.Contains(skill.GetSkill())) result = false;
             }
 
-            return true;
+            return result;
         }
 
         public float GetAttributeModifier(Attribute attribute)
