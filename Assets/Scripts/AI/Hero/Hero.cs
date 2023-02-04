@@ -59,7 +59,7 @@ public class Hero : Singleton<Hero>
             {
                 StartCoroutine(Attack());
             }
-            else if()
+            else if(!EncounterManager.Instance.IsAttacking)
             {
                 StartCoroutine(EncounterManager.Instance.Attack());
             }

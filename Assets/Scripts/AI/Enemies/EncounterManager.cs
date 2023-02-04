@@ -7,7 +7,7 @@ public class EncounterManager : Singleton<EncounterManager>
     public Enemy CurrentEnemyType { get; private set; }
 
     int m_currentHealth;
-    bool isAttacking = false;
+    public bool IsAttacking { get; private set; } = false;
 
     TextBox m_console;
 
@@ -29,12 +29,12 @@ public class EncounterManager : Singleton<EncounterManager>
 
     public IEnumerator Attack()
     {
-        if (isAttacking) yield return null;
-        isAttacking = true;
+        if (IsAttacking) yield return null;
+        IsAttacking = true;
         yield return new WaitForSeconds(2f);
         m_console.AddLine($"{CurrentEnemyType.name} has attacked!");
         Hero.Instance.SetHerosTurn();
-        isAttacking = false;
+        IsAttacking = false;
     }
 
     public void ReciveAttack(Skill skill)
