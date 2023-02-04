@@ -89,17 +89,6 @@ public class Hero : Singleton<Hero>
         }
     }
 
-    private IEnumerator Attack()
-    {
-        attacking = true;
-        var skill = SkillManager.Instance.GetRandomSkill();
-        if (skill == null) m_console.AddLine("The hero lacks any skills and is unable to attack!");
-        else EncounterManager.Instance.ReciveAttack(skill);
-        yield return new WaitForSeconds(4f);
-        isHerosTurn = false;
-        attacking = false;
-    }
-
     #endregion Unity Methods
 
     public Location GetRandomLocation(List<Location> locations)
@@ -112,6 +101,26 @@ public class Hero : Singleton<Hero>
     {
         CurrentHealth = MaxHealth;
         CurrentLocation = GetRandomLocation(StartingLocations);
+    }
+
+    public void EndCombat()
+    {
+        if (inCombat)
+        {
+            inAction = false;
+            inCombat = false;
+        }
+    }
+
+    private IEnumerator Attack()
+    {
+        attacking = true;
+        var skill = SkillManager.Instance.GetRandomSkill();
+        if (skill == null) m_console.AddLine("The hero lacks any skills and is unable to attack!");
+        else EncounterManager.Instance.ReciveAttack(skill);
+        yield return new WaitForSeconds(4f);
+        isHerosTurn = false;
+        attacking = false;
     }
 
     private void HeroIdle()

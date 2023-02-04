@@ -75,6 +75,8 @@ namespace Skills
         {
             var skills = skillItem.GetPrerequisite();
 
+            if (Hero.Instance.XP < skillItem.GetSkill().XpNeededToUnlock) return false;
+
             foreach (var skill in skills)
             {
                 if (!m_skills.Contains(skill.GetSkill())) return false;

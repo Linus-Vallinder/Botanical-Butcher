@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
-  m_Name: Taekwondo  Freak
+  m_Name: Taekwondo Freak
   m_EditorClassIdentifier: 
   Name: Taekwondo  Freak
   PowerLevel: 3
+  XpNeededToUnlock: 100
   Icon: {fileID: 0}
   Description: Bruce Lee movies was the shit growing up!
   SkillUsagePrompts:
