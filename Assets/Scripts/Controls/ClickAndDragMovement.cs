@@ -2,11 +2,37 @@ using UnityEngine;
 
 public class ClickAndDragMovement : MonoBehaviour
 {
-    public float dragSpeed = 2;
+    [SerializeField] private float dragSpeed = 10;
+
+    [Space, SerializeField] private float zoomSpeed;
+    [SerializeField] private Vector2 zoomMinMax = new(-3, -10);
+    [SerializeField] private Vector2 movementClamp;
     private Vector3 dragOrigin;
 
+    private void LateUpdate()
+    {
+        Move();
+        ClampPosition();
+        Zoom();
+    }
 
-    void LateUpdate()
+    private void ClampPosition()
+    {
+        Vector3 clampedPosition = transform.position;
+        clampedPosition.x = Mathf.Clamp(transform.position.x, -movementClamp.x, movementClamp.x);
+        clampedPosition.y = Mathf.Clamp(transform.position.y, -movementClamp.y, movementClamp.y);
+        transform.position = clampedPosition;
+    }
+
+    private void Zoom()
+    {
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        float newOrthoSize = GetComponent<Camera>().orthographicSize - scroll * zoomSpeed;
+        newOrthoSize = Mathf.Clamp(newOrthoSize, zoomMinMax.x, zoomMinMax.y);
+        GetComponent<Camera>().orthographicSize = newOrthoSize;
+    }
+
+    private void Move()
     {
         if (Input.GetMouseButtonDown(0))
         {
