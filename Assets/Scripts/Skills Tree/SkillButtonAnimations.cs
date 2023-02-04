@@ -121,6 +121,7 @@ public class SkillButtonAnimations : MonoBehaviour
 
     public void OpenInfoPanel()
     {
+        AudioManager.Instance.PlaySound("SkillDescription");
         Debug.Log("Open info panel");
         infoTarget = 0.0f;
     }
