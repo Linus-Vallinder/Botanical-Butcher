@@ -45,8 +45,6 @@ public class EnemyAttack
 public class Enemy : ScriptableObject
 {
     [Header("Enemy Options")]
-    public string name;
-    [Space]
     public int maxHealth;
     public int attackPower;
     public int roots;
