@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LineParticles : MonoBehaviour
@@ -8,6 +6,7 @@ public class LineParticles : MonoBehaviour
     [SerializeField] ParticleSystem dustParticles;
     [SerializeField] ParticleSystem sparkParticles;
     [SerializeField] ParticleSystem activeParticles;
+
     [SerializeField] MeshFilter meshFilter;
     [SerializeField] LineRenderer line;
     Mesh lineMesh;
@@ -31,10 +30,16 @@ public class LineParticles : MonoBehaviour
         }
     }
 
+    public void SetParticles((ParticleSystem, ParticleSystem, ParticleSystem) particles)
+    {
+        dustParticles = particles.Item1;
+        sparkParticles = particles.Item2;
+        activeParticles = particles.Item3;
+    }
+
     public void Activate()
     {
         sparkParticles.Stop();
         activeParticles.Play();
     }
-
 }
