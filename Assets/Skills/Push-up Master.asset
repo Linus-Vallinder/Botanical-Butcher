@@ -16,9 +16,16 @@ MonoBehaviour:
   PowerLevel: 0
   Icon: {fileID: 0}
   Description: Finally! You can do ONE push up!
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - With a single, fluid motion, the hero executed a push-up, using the momentum
+    to launch a powerful punch at the enemy.
+  - The hero's muscles rippled as they pushed their body up in one swift movement,
+    striking the enemy with a devastating blow.
+  - The hero's strength was on full display as they effortlessly lifted their body
+    in a single push-up, sending the enemy reeling from the impact.
+  - In one swift motion, the hero pushed themselves up from the ground and delivered
+    a crushing strike to the enemy.
+  - With a powerful push, the hero lifted their body up and brought their fist down
+    on the enemy with a satisfying thud.
   ShowStats: 0
-  Stat:
-    name: 
-    attribute: 0
-    Modifier: -100
+  Stats: []

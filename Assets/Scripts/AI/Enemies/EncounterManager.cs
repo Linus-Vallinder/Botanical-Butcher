@@ -31,7 +31,7 @@ public class EncounterManager : Singleton<EncounterManager>
     {
         if (IsAttacking) yield return null;
         IsAttacking = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3.5f);
         m_console.AddLine($"{CurrentEnemyType.name} has attacked!");
         Hero.Instance.SetHerosTurn();
         IsAttacking = false;
@@ -39,6 +39,6 @@ public class EncounterManager : Singleton<EncounterManager>
 
     public void ReciveAttack(Skill skill)
     {
-
+        m_console.AddLine($"- [{skill.GetRandomUsagePrompt()}] - ");
     }
 }

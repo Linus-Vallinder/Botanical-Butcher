@@ -16,7 +16,17 @@ MonoBehaviour:
   PowerLevel: 2
   Icon: {fileID: 0}
   Description: Your sensual lips are famous for giving heart attacks
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - With a kiss fueled by determination and courage, the hero sent a shockwave of
+    energy through the enemy, leaving them stunned.
+  - The hero's kiss was more than just a show of affection; it was a weapon that
+    they used to disarm their opponent.
+  - A single, passionate kiss from the hero was all it took to bring the enemy to
+    their knees and leave them vulnerable to attack.
+  - The hero's kiss was a powerful expression of love and strength, delivering a
+    crushing blow to the enemy.
+  - The hero's lips met their enemy's with a force that sent ripples of power through
+    their bodies, leaving the enemy dazed and defeated.
   ShowStats: 0
   Stats:
   - name: Starstruck

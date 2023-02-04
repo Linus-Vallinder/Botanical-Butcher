@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
+  m_Name: Taekwondo  Freak
+  m_EditorClassIdentifier: 
+  Name: Taekwondo  Freak
+  PowerLevel: 3
+  Icon: {fileID: 0}
+  Description: Bruce Lee movies was the shit growing up!
+  SkillUsagePrompts:
+  - With a precise and powerful kick, the hero sent the enemy flying, leaving them
+    stunned and vulnerable to attack.
+  - The hero's mastery of Taekwondo was on full display as they delivered a rapid
+    series of strikes, knocking the enemy off balance and leaving them defeated.
+  - A single, well-placed roundhouse kick from the hero was all it took to send the
+    enemy reeling and bring them to their knees.
+  - The hero's speed and agility allowed them to dart in and out, striking the enemy
+    with a series of devastating kicks and punches.
+  - The hero's expertise in Taekwondo proved to be a formidable weapon, leaving the
+    enemy dazed and battered after a series of precise and powerful strikes.
+  ShowStats: 0
+  Stats: []

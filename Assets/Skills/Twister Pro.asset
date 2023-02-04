@@ -19,9 +19,16 @@ MonoBehaviour:
 
     After 20 years if this crap you''ve become
     very flexible.'
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - With lightning-fast moves, the hero twisted and contorted their body, using the
+    momentum to knock the enemy off balance.
+  - The hero's agility and strength were on full display as they expertly navigated
+    the Twister board, leaving their enemy stumbling and disoriented.
+  - The hero's twists and turns in the game of Twister caused the enemy to lose their
+    footing and fall to the ground.
+  - The hero's quick thinking and athletic ability allowed them to turn the game
+    of Twister into a weapon, using their movements to trip up and defeat the enemy.
+  - The hero's body became a blur as they spun and twisted on the Twister board,
+    using their momentum to send the enemy flying.
   ShowStats: 0
-  Stat:
-    name: 
-    attribute: 0
-    Modifier: 0
+  Stats: []

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Skills
@@ -64,6 +63,13 @@ namespace Skills
 
         public void AddSkill(Skill skill)
         => m_skills.Add(skill);
+
+        public Skill GetRandomSkill()
+        {
+            if(m_skills.Count == 0) return null;
+            
+            return m_skills[UnityEngine.Random.Range(0, m_skills.Count)];
+        }
 
         public bool CanUnlock(SkillTreeItem skillItem)
         {

@@ -1,3 +1,4 @@
+using Skills;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,8 +59,9 @@ public class Hero : Singleton<Hero>
             if (isHerosTurn && !attacking)
             {
                 StartCoroutine(Attack());
+                return;
             }
-            else if (!EncounterManager.Instance.IsAttacking)
+            else if (!EncounterManager.Instance.IsAttacking && !attacking)
             {
                 StartCoroutine(EncounterManager.Instance.Attack());
             }
@@ -90,7 +92,10 @@ public class Hero : Singleton<Hero>
     private IEnumerator Attack()
     {
         attacking = true;
-        yield return new WaitForSeconds(2f);
+        var skill = SkillManager.Instance.GetRandomSkill();
+        if (skill == null) m_console.AddLine("The hero lacks any skills and is unable to attack!");
+        else EncounterManager.Instance.ReciveAttack(skill);
+        yield return new WaitForSeconds(4f);
         isHerosTurn = false;
         attacking = false;
     }
