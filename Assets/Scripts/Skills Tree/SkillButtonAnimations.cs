@@ -11,6 +11,7 @@ public class SkillButtonAnimations : MonoBehaviour
 
     [SerializeField] List<SkinnedMeshRenderer> roots = new List<SkinnedMeshRenderer>();
     [SerializeField] SkinnedMeshRenderer infoPanel;
+    [SerializeField] MeshRenderer skillIcon;
 
     [SerializeField] AnimationCurve[] rootOpenCurve;
     [SerializeField] AnimationCurve rootOpenScaleCurve;
@@ -22,12 +23,18 @@ public class SkillButtonAnimations : MonoBehaviour
 
     [SerializeField] ParticleSystem[] growParticles;
 
+    [SerializeField] Material cyanMaterial;
+    [SerializeField] Material goldMaterial;
+
     float rootTarget = 1.0f;
     float rootValue = 1.0f;
     float infoTarget = 1.0f;
     float infoValue = 1.0f;
 
     float startScale;
+
+    Color gold = new Color(0.8f, 0.63f, 0.13f);
+    Color cyan = new Color(0.18f, 0.74f, 0.57f);
 
     void Start()
     {
@@ -38,6 +45,7 @@ public class SkillButtonAnimations : MonoBehaviour
         infoPanel.SetBlendShapeWeight(0, 100.0f);
         skillInfo.alpha = 0.0f;
         startScale = transform.localScale.x;
+        skillName.color = cyan;
     }
 
     void Update()
@@ -132,11 +140,15 @@ public class SkillButtonAnimations : MonoBehaviour
         { 
             growParticles[i].Play();
         }
+        skillName.color = gold;
+        skillIcon.material = goldMaterial;
     }
 
     public void LockSkill()
     {
         Debug.Log("Lock skill");
         rootTarget = 1.0f;
+        skillName.color = cyan;
+        skillIcon.material = cyanMaterial;
     }
 }
