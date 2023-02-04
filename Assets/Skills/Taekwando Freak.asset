@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
-  m_Name: Hula Hoop Headbang
+  m_Name: Taekwando Freak
   m_EditorClassIdentifier: 
-  Name: Hula Hoop Headbang
-  PowerLevel: 1
+  Name: Taekwando Freak
+  PowerLevel: 3
   XpNeededToUnlock: 100
   Icon: {fileID: 0}
-  Description: A combat technique that makes enemies lose all skills!
+  Description: Bruce Lee movies was the shit growing up!
   SkillUsagePrompts: []
   ShowStats: 0
   Stats: []

@@ -170,6 +170,13 @@ public class Hero : Singleton<Hero>
         Debug.Log("New XP: " + XP);
     }
 
+    public void RemoveXP(int amountToRemove)
+    {
+        XP -= amountToRemove;
+        CounterAnimation.Instance.SetCounter(XP);
+        Debug.Log("New XP: " + XP);
+    }
+
     private void HeroWander()
     {
         inAction = true;

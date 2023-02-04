@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Master of Kisses
   PowerLevel: 2
+  XpNeededToUnlock: 100
   Icon: {fileID: 0}
   Description: Your sensual lips are famous for giving heart attacks
   SkillUsagePrompts:

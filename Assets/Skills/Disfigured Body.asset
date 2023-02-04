@@ -14,12 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Disfigured Body
   PowerLevel: 1
+  XpNeededToUnlock: 100
   Icon: {fileID: 0}
   Description: An experiment went wrong, seriously wrong. Enemies will freeze in
     fear, or shit their pants making them very slow.
   SkillUsagePrompts: []
   ShowStats: 0
-  Stat:
-    name: 
-    attribute: 0
-    Modifier: 0
+  Stats: []

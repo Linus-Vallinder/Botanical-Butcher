@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Bladder Control
   PowerLevel: 1
+  XpNeededToUnlock: 100
   Icon: {fileID: 0}
   Description: Even after all that juice. Yous till don't need to pee.
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - 
   ShowStats: 0
-  Stat:
-    name: 
-    attribute: 4
-    Modifier: 20
+  Stats: []
