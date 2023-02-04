@@ -490,6 +490,7 @@ MonoBehaviour:
   - {fileID: 2318366489173879280}
   - {fileID: 5168101125709817077}
   infoPanel: {fileID: 4193611486269358491}
+  skillIcon: {fileID: 6088920192769147034}
   rootOpenCurve:
   - serializedVersion: 2
     m_Curve:
@@ -670,6 +671,8 @@ MonoBehaviour:
   growParticles:
   - {fileID: 8835101360395798696}
   - {fileID: 3484772817233015017}
+  cyanMaterial: {fileID: 2100000, guid: 209eb999edbe45946af04cf347bf6e3e, type: 2}
+  goldMaterial: {fileID: 2100000, guid: 06e46da1ecd60244baa63ea973d51f4d, type: 2}
 --- !u!1 &3641818555332239733
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +969,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5510437841355507253}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 0.3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -1041,7 +1044,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.8
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -1792,7 +1795,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 80
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -2230,7 +2233,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.9478698, a: 0}
+        key0: {r: 0.97404873, g: 1, b: 0, a: 0}
         key1: {r: 1, g: 0.8217414, b: 0, a: 0.48235294}
         key2: {r: 1, g: 1, b: 1, a: 0.6039216}
         key3: {r: 1, g: 1, b: 1, a: 0}
@@ -2239,7 +2242,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
+        ctime1: 41441
         ctime2: 65535
         ctime3: 65535
         ctime4: 0
@@ -2259,8 +2262,8 @@ ParticleSystem:
         m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.6943891, a: 0}
-        key1: {r: 0.9926069, g: 1, b: 0, a: 0.654902}
+        key0: {r: 0.72773886, g: 0.7529412, b: 0.18039215, a: 0}
+        key1: {r: 0.77771765, g: 0.7830189, b: 0.1071111, a: 0.654902}
         key2: {r: 1, g: 1, b: 1, a: 0.58431375}
         key3: {r: 1, g: 1, b: 1, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2268,7 +2271,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
+        ctime1: 37201
         ctime2: 65535
         ctime3: 65535
         ctime4: 0
@@ -6398,12 +6401,12 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
-    angle: 36.92
+    type: 17
+    angle: 67.49
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.88
-    donutRadius: 0.2
+    radiusThickness: 1
+    donutRadius: 2.07
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
@@ -6485,7 +6488,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 2.99
+      value: 3.05
       mode: 0
       spread: 0
       speed:
@@ -6604,7 +6607,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 150
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7042,7 +7045,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.9478698, a: 0}
+        key0: {r: 0.99765027, g: 1, b: 0, a: 0}
         key1: {r: 1, g: 0.8217414, b: 0, a: 0.48235294}
         key2: {r: 1, g: 1, b: 1, a: 0.6039216}
         key3: {r: 1, g: 1, b: 1, a: 0}
@@ -7071,7 +7074,7 @@ ParticleSystem:
         m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.6943891, a: 0}
+        key0: {r: 0, g: 1, b: 0.95873094, a: 0}
         key1: {r: 0.9926069, g: 1, b: 0, a: 0.654902}
         key2: {r: 1, g: 1, b: 1, a: 0.58431375}
         key3: {r: 1, g: 1, b: 1, a: 0}
@@ -7080,7 +7083,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
+        ctime1: 22166
         ctime2: 65535
         ctime3: 65535
         ctime4: 0

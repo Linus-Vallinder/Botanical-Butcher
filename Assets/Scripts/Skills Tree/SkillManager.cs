@@ -40,7 +40,14 @@ namespace Skills
 
         public static Action<Skill> OnSkillAdded;
 
+        TextBox m_console;
+
         #region Unity Methods
+
+        private void Awake()
+        {
+            m_console = FindObjectOfType<TextBox>();
+        }
 
         private void Start()
         {

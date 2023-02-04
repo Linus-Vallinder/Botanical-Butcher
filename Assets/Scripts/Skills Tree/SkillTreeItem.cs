@@ -26,10 +26,13 @@ namespace Skills
 
         private SkillButtonAnimations m_animations;
 
+        private TextBox m_console;
+
         #region Unity Methods
 
         private void Awake()
         {
+            m_console = FindObjectOfType<TextBox>();
             m_animations = GetComponentInChildren<SkillButtonAnimations>();    
         }
 
@@ -82,7 +85,7 @@ namespace Skills
             m_animations.UnlockSkill();
             Unlocked = true;
 
-            Debug.Log($"You have unlocked the [{m_skill.Name}] skill!");
+            m_console.AddLine($"You have unlocked the [{m_skill.Name}] skill!");
         }
     }
 }
