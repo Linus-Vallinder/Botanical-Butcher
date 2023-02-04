@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CounterAnimation : MonoBehaviour
+public class CounterAnimation : Singleton<CounterAnimation>
 {
     [SerializeField] bool debug;
     [SerializeField] TextMeshPro counter;
