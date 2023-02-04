@@ -1203,6 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingLocations:
   - {fileID: 11400000, guid: 00e26867c0cd54c4587903bfe13b7b5b, type: 2}
+  inAction: 0
 --- !u!1 &1209053846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1873747610}
   nrOfLines: 4
-  delay: 0.5
+  delay: 0.05
 --- !u!1 &2014367438
 GameObject:
   m_ObjectHideFlags: 0

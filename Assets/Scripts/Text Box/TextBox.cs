@@ -30,7 +30,7 @@ public class TextBox : MonoBehaviour
         buildConsole();
     }
 
-    void AddLine(string l) {
+    public void AddLine(string l) {
         content.RemoveAt(0);
         if(lineBeingWritten is not null) {
             StopCoroutine("WriteLine");
