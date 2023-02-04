@@ -51,7 +51,7 @@ namespace Skills
             {
                 var line = Instantiate(m_linePrefab);
                 line.transform.parent = transform;
-                line.SetLine(new Vector3[] { transform.position, preSkill.transform.position });
+                line.SetLine(new Vector3[] { preSkill.transform.position, transform.position });
             }
         }
 
