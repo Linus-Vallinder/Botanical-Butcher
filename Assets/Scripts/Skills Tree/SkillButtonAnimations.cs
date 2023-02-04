@@ -13,7 +13,7 @@ public class SkillButtonAnimations : MonoBehaviour
     [SerializeField] List<SkinnedMeshRenderer> roots = new List<SkinnedMeshRenderer>();
     [SerializeField] SkinnedMeshRenderer infoPanel;
 
-    [SerializeField] AnimationCurve rootOpenCurve;
+    [SerializeField] AnimationCurve[] rootOpenCurve;
     [SerializeField] float rootOpenSpeed;
     [SerializeField] AnimationCurve infoPanelOpenCurve;
     [SerializeField] float infoPanelOpenSpeed;
@@ -77,18 +77,18 @@ public class SkillButtonAnimations : MonoBehaviour
         {
             rootValue += Time.deltaTime * rootOpenSpeed;
             rootValue = Mathf.Clamp01(rootValue);
-            foreach(SkinnedMeshRenderer root in roots)
+            for(int i = 0; i < roots.Count; ++i)
             {
-                root.SetBlendShapeWeight(0, rootOpenCurve.Evaluate(rootValue) * 100.0f);
+                roots[i].SetBlendShapeWeight(0, rootOpenCurve[i].Evaluate(rootValue) * 100.0f);
             }
         }
         else if (rootTarget < rootValue)
         {
             rootValue -= Time.deltaTime * rootOpenSpeed;
             rootValue = Mathf.Clamp01(rootValue);
-            foreach (SkinnedMeshRenderer root in roots)
+            for (int i = 0; i < roots.Count; ++i)
             {
-                root.SetBlendShapeWeight(0, rootOpenCurve.Evaluate(rootValue) * 100.0f);
+                roots[i].SetBlendShapeWeight(0, rootOpenCurve[i].Evaluate(rootValue) * 100.0f);
             }
         }
     }
