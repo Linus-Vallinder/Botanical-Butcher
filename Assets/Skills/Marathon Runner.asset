@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Marathon Runner
   PowerLevel: 2
+  XpNeededToUnlock: 100
   Icon: {fileID: 0}
   Description: You once ran to the subway, never again.
   SkillUsagePrompts: []
   ShowStats: 0
-  Stat:
-    name: 
-    attribute: 0
-    Modifier: 0
+  Stats: []
