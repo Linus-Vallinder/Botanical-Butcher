@@ -18,7 +18,10 @@ MonoBehaviour:
   Description: Your sensual lips are famous for giving heart attacks
   SkillUsagePrompts: []
   ShowStats: 0
-  Stat:
-    name: 
-    attribute: 0
-    Modifier: 0
+  Stats:
+  - name: Starstruck
+    attribute: 5
+    Modifier: 20
+  - name: Flexible lips
+    attribute: 1
+    Modifier: 9

@@ -19,6 +19,15 @@ namespace Skills
         [Header("Stat Options")]
 
         public bool ShowStats;
-        [Space] public Stat Stat;
+        public List<Stat> Stats = new();
+
+        public float GetAttributeModifier(Attribute attribute) {
+            var total = 0f;
+            Stats.ForEach( stat => {
+                if(stat.attribute == attribute) total += stat.Modifier;
+            });
+            return total;
+        }
+
     }
 }
