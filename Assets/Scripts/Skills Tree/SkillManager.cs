@@ -68,6 +68,17 @@ namespace Skills
             else Debug.LogWarning($"Tried to add {skill.Name} and failed!");
         }
 
+        public bool CanUnlock(SkillTreeItem skillItem)
+        {
+            var skills = skillItem.GetPrerequisite();
+            foreach (var skill in skills)
+            {
+                if (!m_skills.Contains(skill.GetSkill())) return false;
+            }
+
+            return true;
+        }
+
         public float GetAttributeModifier(Attribute attribute)
         {
             var total = 0f;
