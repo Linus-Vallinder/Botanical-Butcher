@@ -70,13 +70,15 @@ namespace Skills
 
         public bool CanUnlock(SkillTreeItem skillItem)
         {
+            bool result = true;
             var skills = skillItem.GetPrerequisite();
+
             foreach (var skill in skills)
             {
-                if (!m_skills.Contains(skill.GetSkill())) return false;
+                if (!m_skills.Contains(skill.GetSkill())) result = false;
             }
 
-            return true;
+            return result;
         }
 
         public float GetAttributeModifier(Attribute attribute)
