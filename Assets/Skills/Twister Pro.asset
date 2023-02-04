@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
-  m_Name: Bladder Control
+  m_Name: Twister Pro
   m_EditorClassIdentifier: 
-  Name: Bladder Control
-  PowerLevel: 1
+  Name: Twister Pro
+  PowerLevel: 3
   Icon: {fileID: 0}
-  Description: Even after all that juice. Yous till don't need to pee.
+  Description: 'Hand red, Foot blue...
+
+    After 20 years if this crap you''ve become
+    very flexible.'
   SkillUsagePrompts: []
   ShowStats: 0
   Stat:
     name: 
     attribute: 0
-    Modifier: -100
+    Modifier: 0

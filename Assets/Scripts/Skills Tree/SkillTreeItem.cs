@@ -19,18 +19,12 @@ namespace Skills
 
         public Skill GetSkill() => m_skill;
         public List<SkillTreeItem> GetPrerequisite() => m_prerequisite;
+        public void SetPrerequisite(SkillTreeItem item) => m_prerequisite.Add(item);
 
-        #region Unity Methods
-
-        private void Start()
+        public void InitSkill(Skill skill)
         {
-            InitSkill();
-        }
+            m_skill = skill;
 
-        #endregion
-
-        public void InitSkill()
-        {
             m_name.text = m_skill.Name;
             m_description.text = m_skill.Description;
             m_iconRenderer.sprite = m_skill.Icon;

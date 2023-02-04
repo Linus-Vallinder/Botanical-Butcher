@@ -442,6 +442,78 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_skillOffset.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_skillOffset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: Trees.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_skillTreeItemPrefab
+      value: 
+      objectReference: {fileID: 8538761091307241280, guid: 5a5033458bbc8bf4e9051d5004a36474, type: 3}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: Trees.Array.data[0].RootSkill
+      value: 
+      objectReference: {fileID: 11400000, guid: ac7f7d12f58884e499420ee6f3b27b09, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].RootSkill
+      value: 
+      objectReference: {fileID: 11400000, guid: ac7f7d12f58884e499420ee6f3b27b09, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: Trees.Array.data[0].Skills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: Trees.Array.data[0].Skills.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: cdac9b2ad2dfafe4ea66b39ba89b78c1, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: cdac9b2ad2dfafe4ea66b39ba89b78c1, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5142aad79c20e434db38b41faecf03b8, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0348974877a5e9c408e4c4603928b007, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 353c49e72c190704d84552f8e53934d3, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9561b169547f0ae449804dff111989d7, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 40796309841521643a4bc7123f432e62, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 216e1d371ac718c439628564340dd1b8, type: 2}
+    - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
+      propertyPath: m_trees.Array.data[0].Skills.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0feaea2dcbda854439090b352c4e6f84, type: 2}
     - target: {fileID: 4210494439474265198, guid: 0f1675359e5620646b55486956a0795c, type: 3}
       propertyPath: m_Name
       value: ----- Skill Tree -----

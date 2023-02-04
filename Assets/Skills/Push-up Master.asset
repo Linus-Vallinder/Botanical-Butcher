@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Push-up Master
   m_EditorClassIdentifier: 
   Name: Push-up Master
-  PowerLevel: 0
+  PowerLevel: 3
+  Icon: {fileID: 0}
   Description: Finally! You can do ONE push up!
   SkillUsagePrompts: []
+  ShowStats: 0
   Stat:
     name: 
     attribute: 0
