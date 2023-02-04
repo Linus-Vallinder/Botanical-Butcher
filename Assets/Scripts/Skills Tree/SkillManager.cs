@@ -52,6 +52,7 @@ namespace Skills
 
         private void Start()
         {
+            m_skills.Clear();
             OnSkillAdded += AddSkill;
         }
 

@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1472982178be4c4b8c52c85a24ce134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   skillName: {fileID: 6473742790728700727}
   skillInfo: {fileID: 8207613804757366898}
   roots:
