@@ -11,9 +11,19 @@ public class LineParticles : MonoBehaviour
     [SerializeField] LineRenderer line;
     Mesh lineMesh;
 
-    void Start()
+    public void Start()
     {
         activeParticles.Stop();
+        if(line.positionCount == 0)
+        { 
+            SetLine(new Vector3[] {transform.position, transform.position});
+        }
+    }
+
+    public void SetLine(Vector3[] positions)
+    {
+        line.positionCount = positions.Length;
+        line.SetPositions(positions);
         lineMesh = new Mesh();
         line.BakeMesh(lineMesh, true);
         meshFilter.mesh = lineMesh;

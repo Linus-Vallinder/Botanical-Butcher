@@ -51,8 +51,7 @@ namespace Skills
             {
                 var line = Instantiate(m_linePrefab);
                 line.transform.parent = transform;
-                var lineComp = line.GetComponent<LineRenderer>();
-                lineComp.SetPositions(new Vector3[] { transform.position, preSkill.transform.position });
+                line.SetLine(new Vector3[] { transform.position, preSkill.transform.position });
             }
         }
 
