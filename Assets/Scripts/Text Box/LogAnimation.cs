@@ -16,8 +16,6 @@ public class LogAnimation : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Input.mousePosition);
-        Debug.Log(Screen.height);
         if (Input.mousePosition.y > Screen.height * 0.8f)
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, localHoverPos, Time.deltaTime * speed);
