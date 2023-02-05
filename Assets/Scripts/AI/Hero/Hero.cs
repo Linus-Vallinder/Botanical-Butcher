@@ -14,6 +14,7 @@ public enum HeroState
     Sell,
     Encounter,
     Dead,
+    Intro,
     None
 }
 
@@ -68,7 +69,7 @@ public class Hero : Singleton<Hero>
 
     private void Start()
     {
-        m_currentState = HeroState.Idle;
+        m_currentState = HeroState.Intro;
     }
 
     private void Update()
@@ -138,6 +139,9 @@ public class Hero : Singleton<Hero>
             case HeroState.Pockets:
                 HeroPockets();
                 break;
+            case HeroState.Intro:
+                HeroIntro();
+                break;
         }
     }
 
@@ -153,6 +157,27 @@ public class Hero : Singleton<Hero>
     {
         health = MaxHealth;
         CurrentLocation = GetRandomLocation(StartingLocations);
+    }
+
+    private void HeroIntro()
+    {
+        inAction = true;
+        StartCoroutine(Intro());
+    }
+
+    private IEnumerator Intro()
+    {
+        m_console.AddLine("Welcome to Botanical Butcher!");
+        yield return new WaitForSeconds(1.5f);
+        m_console.AddLine("The life of a great hero is in your hands.");
+        yield return new WaitForSeconds(1.5f);
+        m_console.AddLine("It is your duty to protect him and ensure that the world is free of evil plant monsters!");
+        yield return new WaitForSeconds(2.5f);
+        m_console.AddLine("Press R any time to restart the game.");
+        yield return new WaitForSeconds(2.5f);
+        m_console.AddLine("Hold Tab to Speed up the game.");
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(ChangeState(1f, HeroState.Idle));
     }
 
     private void HeroPockets()

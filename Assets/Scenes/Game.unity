@@ -12478,7 +12478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
       propertyPath: MinWdith
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4210494439474265196, guid: 0f1675359e5620646b55486956a0795c, type: 3}
       propertyPath: RandomSpread
