@@ -6454,7 +6454,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7c274c696524ae5479f623c46c450acd, type: 3}
   - {fileID: 8300000, guid: d1c71d55590fe7f4fb88ede44ae3bf1b, type: 3}
   - {fileID: 8300000, guid: 0608e2d3ad66cc8499abb8b0b7dd40b0, type: 3}
-  - {fileID: 8300000, guid: 1cf3c5ef9ff6d3f488068e06940a3598, type: 3}
   - {fileID: 8300000, guid: 4b054d915fbd0bc4295f9097915f302f, type: 3}
   - {fileID: 8300000, guid: 615dc89cf28893b4d9153d73a461b093, type: 3}
   - {fileID: 8300000, guid: 6ef4b1765c1c9bf42853a33ad17b6d9b, type: 3}
@@ -8260,7 +8259,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 12.5, y: 18.19, z: 1}
+    m_Scale: {x: 50, y: 50, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -8458,7 +8457,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
