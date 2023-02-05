@@ -9,7 +9,9 @@ internal enum HeroState
     Idle,
     Travel,
     Wander,
-    Encounter
+    Encounter,
+    Dead,
+    None
 }
 
 public class Hero : Singleton<Hero>
@@ -19,7 +21,17 @@ public class Hero : Singleton<Hero>
     public Location CurrentLocation { get; private set; }
 
     public int MaxHealth { get; private set; } = 100;
-    public int CurrentHealth { get; private set; }
+    public int CurrentHealth
+    {
+        get => health;
+        private set
+        {
+            health = value;
+            HealthAnimation.Instance.SetHealth(health / MaxHealth);
+        }
+    }
+
+    private int health;
 
     public int XP { get; private set; }
     public int Gold { get; private set; }
@@ -59,6 +71,13 @@ public class Hero : Singleton<Hero>
             AddXP(1000);
 #endif
 
+        if (CurrentHealth <= 0)
+        {
+            inCombat = false;
+            inAction = false;
+            m_currentState = HeroState.Dead;
+        }
+
         if (inCombat)
         {
             if (isHerosTurn && !attacking)
@@ -91,6 +110,14 @@ public class Hero : Singleton<Hero>
             case HeroState.Encounter:
                 HeroEncounter();
                 break;
+
+            case HeroState.Dead:
+                HeroDead();
+                break;
+
+            case HeroState.None:
+                Debug.Log("Nothing Happens!");
+                break;
         }
     }
 
@@ -104,7 +131,7 @@ public class Hero : Singleton<Hero>
 
     private void InitHero()
     {
-        CurrentHealth = MaxHealth;
+        health = MaxHealth;
         CurrentLocation = GetRandomLocation(StartingLocations);
     }
 
@@ -117,15 +144,39 @@ public class Hero : Singleton<Hero>
         }
     }
 
+    public void ReciveAttack(EnemyAttack attack)
+    {
+        CurrentHealth -= attack.BasePower;
+    }
+
     private IEnumerator Attack()
     {
         attacking = true;
         var skill = SkillManager.Instance.GetRandomSkill();
-        if (skill == null) m_console.AddLine("The hero lacks any skills and is unable to attack!");
+        if (skill == null)
+        {
+            m_console.AddLine("The hero lacks any skills and is unable to attack!");
+            yield return new WaitForSeconds(2f);
+            yield return null;
+        }
         else EncounterManager.Instance.ReciveAttack(skill);
         yield return new WaitForSeconds(4f);
         isHerosTurn = false;
         attacking = false;
+    }
+
+    private void HeroDead()
+    {
+        inAction = true;
+        StartCoroutine(Lose());
+    }
+
+    private IEnumerator Lose()
+    {
+        m_console.AddLine("The hero has reach is final moments, and is DEAD!");
+        yield return new WaitForSeconds(3.5f);
+        inAction = false;
+        m_currentState = HeroState.None;
     }
 
     private void HeroIdle()
@@ -172,8 +223,14 @@ public class Hero : Singleton<Hero>
     private void HeroEncounter()
     {
         inAction = true;
-        inCombat = true;
+        StartCoroutine(StartCombat());
+    }
+
+    private IEnumerator StartCombat()
+    {
         m_console.AddLine($"The hero has encounterd a {currentTargetEnemy.name}");
+        yield return new WaitForSeconds(3.5f);
+        inCombat = true;
         EncounterManager.Instance.InstantiateEnemy(currentTargetEnemy);
     }
 

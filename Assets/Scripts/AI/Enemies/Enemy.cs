@@ -38,7 +38,14 @@ public class EnemyAttack
     public string UsagePrompt;
     
     [Space]
-    public int Power;
+    public int BasePower;
+
+    public EnemyAttack(string name, string usagePrompt, int basePower)
+    {
+        Name = name;
+        UsagePrompt = usagePrompt;
+        BasePower = basePower;
+    }
 }
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "Enemies/New Enemy")]
@@ -60,4 +67,10 @@ public class Enemy : ScriptableObject
 
     [Space]
     public List<EnemyAttack> Attacks = new();
+
+    public EnemyAttack GetRandomAttack()
+    {
+        if (Attacks.Count == 0) return new EnemyAttack("Punch", $"The {this.name} used punch!", 50);
+        else return Attacks[Random.Range(0, Attacks.Count)];
+    }
 }

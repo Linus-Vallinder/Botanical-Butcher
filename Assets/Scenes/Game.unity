@@ -6916,7 +6916,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1.0426159, y: -48.013153, z: -132.36086, w: -3.1080315}
+  m_margin: {x: -1.0426159, y: -264.88162, z: -132.36086, w: -3.1080315}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -6980,7 +6980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1873747610}
-  nrOfLines: 4
+  nrOfLines: 8
   delay: 0.025
 --- !u!1 &2014367438
 GameObject:

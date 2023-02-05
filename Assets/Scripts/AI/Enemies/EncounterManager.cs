@@ -1,15 +1,15 @@
+using Skills;
 using System.Collections;
 using UnityEngine;
-using Skills;
 
 public class EncounterManager : Singleton<EncounterManager>
 {
     public Enemy CurrentEnemyType { get; private set; }
 
-    int m_currentHealth;
+    private int m_currentHealth;
     public bool IsAttacking { get; private set; } = false;
 
-    TextBox m_console;
+    private TextBox m_console;
 
     #region Unity Methods
 
@@ -18,21 +18,40 @@ public class EncounterManager : Singleton<EncounterManager>
         m_console = FindObjectOfType<TextBox>();
     }
 
-    #endregion
+    #endregion Unity Methods
 
     public void InstantiateEnemy(Enemy enemy)
     {
         CurrentEnemyType = enemy;
         m_currentHealth = enemy.maxHealth;
-        Attack();
     }
 
     public IEnumerator Attack()
     {
         if (IsAttacking) yield return null;
         IsAttacking = true;
-        yield return new WaitForSeconds(3.5f);
+        if (m_currentHealth <= 0)
+        {
+            m_console.AddLine($"The hero has defeated the {CurrentEnemyType.name} Monster!");
+            yield return new WaitForSeconds(3.5f);
+
+            Hero.Instance.EndCombat();
+            Hero.Instance.AddXP(Mathf.RoundToInt(Random.Range(CurrentEnemyType.XPDropRange.x, CurrentEnemyType.XPDropRange.y)));
+            Hero.Instance.SetHerosTurn();
+
+            IsAttacking = false;
+            yield return null;
+        }
+
         m_console.AddLine($"{CurrentEnemyType.name} has attacked!");
+        yield return new WaitForSeconds(3.5f);
+
+        var attack = CurrentEnemyType.GetRandomAttack();
+        m_console.AddLine(attack.UsagePrompt);
+        //Do Damage
+        Hero.Instance.ReciveAttack(attack);
+        yield return new WaitForSeconds(3.5f);
+
         Hero.Instance.SetHerosTurn();
         IsAttacking = false;
     }
@@ -41,12 +60,5 @@ public class EncounterManager : Singleton<EncounterManager>
     {
         m_console.AddLine($"- [{skill.GetRandomUsagePrompt()}] - ");
         m_currentHealth -= 100; //This will be influenced by the skills
-
-        if (m_currentHealth <= 0)
-        {
-            m_console.AddLine($"The hero has defeated the {CurrentEnemyType.name} Monster!");
-            Hero.Instance.EndCombat();
-            Hero.Instance.AddXP(Mathf.RoundToInt(Random.Range(CurrentEnemyType.XPDropRange.x, CurrentEnemyType.XPDropRange.y)));
-        }
     }
 }
