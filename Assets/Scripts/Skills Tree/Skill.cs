@@ -10,7 +10,8 @@ namespace Skills
         public string Name;
         public int PowerLevel; //Used for random generation of skill tree
         public int XpNeededToUnlock;
-        public Sprite Icon;
+        public Mesh Icon;
+        public AudioClip AudioClip;
 
         [Space, TextArea] public string Description;
 
@@ -23,7 +24,10 @@ namespace Skills
         public List<Stat> Stats = new();
 
         public string GetRandomUsagePrompt()
-        => SkillUsagePrompts[Random.Range(0, SkillUsagePrompts.Count)];
+        {
+            if (SkillUsagePrompts.Count == 0) return $"The hero has used the [{Name}] skill!";
+            else return SkillUsagePrompts[Random.Range(0, SkillUsagePrompts.Count)];
+        }
 
         public float GetAttributeModifier(Attribute attribute) {
             var total = 0f;

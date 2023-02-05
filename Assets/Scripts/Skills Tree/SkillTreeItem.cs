@@ -11,7 +11,8 @@ namespace Skills
         [SerializeField] private Skill m_skill;
         [Space, SerializeField] private TextMeshPro m_name;
         [SerializeField] private TextMeshPro m_description;
-        [SerializeField] private SpriteRenderer m_iconRenderer;
+        [SerializeField] private MeshFilter m_iconRenderer;
+        [SerializeField] private AudioClip m_audioClip;
 
         [Space, SerializeField] private List<SkillTreeItem> m_prerequisite = new();
 
@@ -27,6 +28,8 @@ namespace Skills
         private SkillButtonAnimations m_animations;
 
         private TextBox m_console;
+
+        private LineParticles line;
 
         #region Unity Methods
 
@@ -44,7 +47,8 @@ namespace Skills
 
             m_name.text = m_skill.Name;
             m_description.text = m_skill.Description;
-            m_iconRenderer.sprite = m_skill.Icon;
+            m_iconRenderer.sharedMesh = m_skill.Icon;
+            m_audioClip = m_skill.AudioClip;
         }
 
         public void DrawLines()
@@ -52,9 +56,10 @@ namespace Skills
             //Draw Lines to Prerequisite skills
             foreach (var preSkill in m_prerequisite)
             {
-                var line = Instantiate(m_linePrefab);
+                line = Instantiate(m_linePrefab);
                 line.transform.parent = transform;
-                line.SetLine(new Vector3[] { preSkill.transform.position, transform.position });
+                Vector3 offset = Vector3.right * 0.75f;
+                line.SetLine(new Vector3[] { preSkill.transform.position + offset, transform.position + offset });
             }
         }
 
@@ -86,9 +91,22 @@ namespace Skills
             SkillManager.OnSkillAdded(m_skill);
             Hero.Instance.RemoveXP(m_skill.XpNeededToUnlock);
             m_animations.UnlockSkill();
+            if(line)
+            { 
+                line.Activate();
+            }
+            if(m_audioClip)
+            {
+                Invoke("PlaySound", 1.6f);
+            }
             Unlocked = true;
 
             m_console.AddLine($"You have unlocked the [{m_skill.Name}] skill!");
+        }
+
+        void PlaySound()
+        {
+            AudioManager.Instance.PlaySound(m_audioClip);
         }
     }
 }

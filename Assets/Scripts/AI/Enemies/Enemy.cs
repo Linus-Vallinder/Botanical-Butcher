@@ -38,7 +38,14 @@ public class EnemyAttack
     public string UsagePrompt;
     
     [Space]
-    public int Power;
+    public int BasePower;
+
+    public EnemyAttack(string name, string usagePrompt, int basePower)
+    {
+        Name = name;
+        UsagePrompt = usagePrompt;
+        BasePower = basePower;
+    }
 }
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "Enemies/New Enemy")]
@@ -56,8 +63,26 @@ public class Enemy : ScriptableObject
     public List<EnemyStat> Stats = new();
 
     [Space]
-    public List<Item> DropTable = new();
+    public DropTable<Item> DropTable = new();
 
     [Space]
     public List<EnemyAttack> Attacks = new();
+
+    public Item GetRandomDrop()
+    => DropTable.GetDrop();
+
+    public EnemyAttack GetRandomAttack()
+    {
+        if (Attacks.Count == 0) return new EnemyAttack("Punch", $"The {this.name} used punch!", 50);
+        else return Attacks[Random.Range(0, Attacks.Count)];
+    }
+
+    public float GetAttributeModifier(EnemyAttribute attribute)
+        {
+            var total = 0f;
+            Stats.ForEach( stat => {
+                if(stat.attribute == attribute) total += stat.Modifier;
+            });
+            return total;
+        }
 }

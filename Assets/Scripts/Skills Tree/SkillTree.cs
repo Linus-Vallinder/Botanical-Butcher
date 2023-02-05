@@ -21,6 +21,8 @@ namespace Skills
         [Space, SerializeField] private int MaxWidth = 4;
         [SerializeField] private int MinWdith = 2;
         [Space, SerializeField] private Vector2 m_skillOffset;
+        [SerializeField] private float RandomSpreadX = 2;
+        [SerializeField] private float RandomSpreadY = 2;
 
         #region Unity Methods
 
@@ -77,7 +79,7 @@ namespace Skills
                     
                     //Spawn Skill
                     var skill = GetRandomSkill(skills);
-                    var item = SpawnItem(skill, new Vector3(posX, -posY) + tree.StartPosition);
+                    var item = SpawnItem(skill, new Vector3(posX, -posY) + tree.StartPosition + new Vector3(Random.Range(-RandomSpreadX, RandomSpreadX), Random.Range(-RandomSpreadY, RandomSpreadY), 0.0f));
 
                     items.Add(item);
                     skills.Remove(skill);

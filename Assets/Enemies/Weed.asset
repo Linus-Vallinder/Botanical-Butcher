@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Weed
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 100
   attackPower: 0
   roots: 0
   XPDropRange: {x: 20, y: 50}
   Stats: []
-  DropTable: []
+  DropTable:
+    items:
+    - item: {fileID: 11400000, guid: 56e3b26a02b8f7f48a44fa3e81f5bc92, type: 2}
+      weight: 10
   Attacks: []

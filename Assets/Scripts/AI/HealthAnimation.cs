@@ -1,30 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthAnimation : Singleton<HealthAnimation>
 {
-    [SerializeField] AudioClip[] hurtClips;
-    [SerializeField] bool debug;
-    [SerializeField] Transform healthBar;
-    [SerializeField] float animSpeed;
-    float targetValue = 1.0f;
-    float currentValue = 1.0f;
+    [SerializeField] private AudioClip[] hurtClips;
+    [SerializeField] private bool debug;
+    [SerializeField] private Transform healthBar;
+    [SerializeField] private float animSpeed;
+    [SerializeField] private float shakeAmpunt;
+    private float targetValue = 1.0f;
+    private float currentValue = 1.0f;
+    private Vector3 defaultPosition;
 
-    void Update()
+    private void Start()
     {
-        if(debug)
+        defaultPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        if (debug)
         {
-            if(Input.GetKeyDown(KeyCode.Alpha8))
+            if (Input.GetKeyDown(KeyCode.Alpha8))
             {
                 SetHealth(0.8f);
             }
         }
 
-        if(!Mathf.Approximately(targetValue, currentValue))
+        if (!Mathf.Approximately(targetValue, currentValue))
         {
+            transform.position = defaultPosition + Random.insideUnitSphere * shakeAmpunt * Mathf.Abs(targetValue - currentValue);
             currentValue = Mathf.Lerp(currentValue, targetValue, Time.deltaTime * animSpeed);
+            currentValue = Mathf.Clamp01(currentValue);
             healthBar.localScale = new Vector3(1.0f, currentValue, 1.0f);
+        }
+        else
+        {
+            transform.position = defaultPosition;
         }
     }
 

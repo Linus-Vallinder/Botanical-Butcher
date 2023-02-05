@@ -6,6 +6,7 @@ public class Location : ScriptableObject
 {
     [Header("Location Options")]
     public string Name;
+    public bool HasChurch;
 
     [Space]
     public List<Enemy> SpawnPool = new();
