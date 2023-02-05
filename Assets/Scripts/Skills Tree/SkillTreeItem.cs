@@ -58,7 +58,8 @@ namespace Skills
             {
                 line = Instantiate(m_linePrefab);
                 line.transform.parent = transform;
-                line.SetLine(new Vector3[] { preSkill.transform.position, transform.position });
+                Vector3 offset = Vector3.right * 0.75f;
+                line.SetLine(new Vector3[] { preSkill.transform.position + offset, transform.position + offset });
             }
         }
 
