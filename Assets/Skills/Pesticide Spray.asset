@@ -18,7 +18,14 @@ MonoBehaviour:
   Icon: {fileID: -577247309135223140, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 486193037f8ed47428593e810697149c, type: 3}
   Description: Goes straight to the roots!
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - With a quick squeeze, the hero unleashed a cloud of pesticide, leaving the enemy
+    choking and struggling to defend themselves.
+  - The hero's mastery of the pesticide spray was on full display as they unleashed
+    a barrage of toxic chemicals, weakening the enemy and leaving them vulnerable
+    to attack.
+  - The enemy was caught off guard as the hero unleashed the pesticide spray, leaving
+    them coughing and blinded by the noxious fumes.
   ShowStats: 0
   Stats:
   - name: 

@@ -19,7 +19,9 @@ MonoBehaviour:
   AudioClip: {fileID: 8300000, guid: 91949afe9b20f0b4b876edcaf96b1b24, type: 3}
   Description: You thought a lot on life, the ways of nature, the complexity of the
     world. Did it make you smarter you ask yourself...
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - The hero's mastery of mental fortitude was on full display as they entered into
+    a deep meditative state, leaving the enemy disoriented and vulnerable to attack.
   ShowStats: 0
   Stats:
   - name: 

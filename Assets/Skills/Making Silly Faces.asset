@@ -18,7 +18,9 @@ MonoBehaviour:
   Icon: {fileID: -8713722043019394464, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 2cb19a70ad2b7e846bb9e245da31e03f, type: 3}
   Description: Enemies go berserk!
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - The hero's mastery of humor was on full display as they unleashed a barrage of
+    silly faces, leaving the enemy off balance and vulnerable to attack.
   ShowStats: 0
   Stats:
   - name: 

@@ -19,7 +19,8 @@ MonoBehaviour:
   AudioClip: {fileID: 0}
   Description: Poison and thorns mean nothing to you!
   SkillUsagePrompts:
-  - 
+  - With his Thick Leather Gloves the hero punched his enemy dealing a large amount
+    of damage!
   ShowStats: 0
   Stats:
   - name: Nothing can touch you!
