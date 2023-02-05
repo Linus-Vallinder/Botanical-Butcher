@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pee Sprinkler
   m_EditorClassIdentifier: 
   Name: Pee Sprinkler
-  PowerLevel: 3
-  XpNeededToUnlock: 120
+  PowerLevel: 4
+  XpNeededToUnlock: 300
   Icon: {fileID: -7424289056242696484, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 9b58d1128d4f93842b8f6bab122aa554, type: 3}
   Description: Goes straight to the roots!

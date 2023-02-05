@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Meditating Guru
   m_EditorClassIdentifier: 
   Name: Meditating Guru
-  PowerLevel: 7
+  PowerLevel: 6
   XpNeededToUnlock: 1000
   Icon: {fileID: -8249110132493375973, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 91949afe9b20f0b4b876edcaf96b1b24, type: 3}

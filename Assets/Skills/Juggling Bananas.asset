@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Juggling Bananas
   PowerLevel: 3
-  XpNeededToUnlock: 300
+  XpNeededToUnlock: 150
   Icon: {fileID: 3917596504866293074, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 4b054d915fbd0bc4295f9097915f302f, type: 3}
   Description: Make enemies dizzy and weak

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Rabbit in a hat
   m_EditorClassIdentifier: 
   Name: Rabbit in a hat
-  PowerLevel: 5
-  XpNeededToUnlock: 500
+  PowerLevel: 4
+  XpNeededToUnlock: 300
   Icon: {fileID: 1731667710265935208, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 0}
   Description: It's a MAGIC trick

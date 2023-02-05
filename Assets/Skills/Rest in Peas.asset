@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Rest in Peas
   PowerLevel: 4
-  XpNeededToUnlock: 200
+  XpNeededToUnlock: 300
   Icon: {fileID: -8405868601214571181, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 9609255ae2eeb49468d8671364c1a0ec, type: 3}
   Description: Like peas in a pod all of your plant friends will die alongside you

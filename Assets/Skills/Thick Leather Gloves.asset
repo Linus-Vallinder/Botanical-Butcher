@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Thick Leather Gloves
   m_EditorClassIdentifier: 
   Name: Thick Leather Gloves
-  PowerLevel: 4
-  XpNeededToUnlock: 200
+  PowerLevel: 6
+  XpNeededToUnlock: 1500
   Icon: {fileID: 393906677899266335, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 0}
   Description: Poison and thorns mean nothing to you!

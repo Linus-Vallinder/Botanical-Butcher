@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pesticide Spray
   m_EditorClassIdentifier: 
   Name: Pesticide Spray
-  PowerLevel: 3
-  XpNeededToUnlock: 120
+  PowerLevel: 4
+  XpNeededToUnlock: 300
   Icon: {fileID: -577247309135223140, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 486193037f8ed47428593e810697149c, type: 3}
   Description: Goes straight to the roots!
