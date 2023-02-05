@@ -20,4 +20,13 @@ MonoBehaviour:
   Description: Your cheap products are great for giving headaches
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 3
+    Modifier: 10
+  - name: 
+    attribute: 4
+    Modifier: 10
+  - name: 
+    attribute: 5
+    Modifier: 5

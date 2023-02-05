@@ -21,4 +21,7 @@ MonoBehaviour:
     fear, or shit their pants making them very slow.
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 5
+    Modifier: 5

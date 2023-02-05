@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
   m_Name: Rabbit in a hat
   m_EditorClassIdentifier: 
-  Name: 
-  PowerLevel: 0
-  XpNeededToUnlock: 0
-  Icon: {fileID: 0}
+  Name: Rabbit in a hat
+  PowerLevel: 5
+  XpNeededToUnlock: 500
+  Icon: {fileID: 1731667710265935208, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 0}
-  Description: 
+  Description: It's a MAGIC trick
   SkillUsagePrompts: []
   ShowStats: 0
   Stats: []

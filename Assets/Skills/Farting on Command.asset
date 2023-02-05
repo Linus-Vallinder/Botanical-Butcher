@@ -17,7 +17,16 @@ MonoBehaviour:
   XpNeededToUnlock: 60
   Icon: {fileID: 4312068952600025762, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 0608e2d3ad66cc8499abb8b0b7dd40b0, type: 3}
-  Description: 
+  Description: The smell will kill you
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 10
+  - name: 
+    attribute: 4
+    Modifier: 10
+  - name: 
+    attribute: 3
+    Modifier: 10

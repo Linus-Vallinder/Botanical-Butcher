@@ -20,4 +20,7 @@ MonoBehaviour:
   Description: You're not naked anymore. Good for you <3
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 5
