@@ -26,4 +26,4 @@ MonoBehaviour:
   Attacks:
   - Name: GUN
     UsagePrompt: The enemy has shot the player with his gun!
-    BasePower: 100
+    BasePower: 45

@@ -5,6 +5,19 @@ public class Inventory : Singleton<Inventory>
 {
     public Dictionary<Item, int> Contents = new();
 
+    public int GetTotalWorth()
+    {
+        var total = 0;
+        foreach (var item in Contents)
+        {
+            total += item.Key.value * item.Value;
+        }
+        return total;
+    }
+
+    public void RemoveAll()
+    => Contents.Clear();
+
     public void Add(Item item)
     {
         if (Contents.ContainsKey(item)) Contents[item] += 1;

@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-internal enum HeroState
+public enum HeroState
 {
     Idle,
     Travel,
     Wander,
+    Heal,
+    Sell,
     Encounter,
     Dead,
     None
@@ -20,7 +22,10 @@ public class Hero : Singleton<Hero>
 
     public Location CurrentLocation { get; private set; }
 
+    public int Gold { get; private set; } = 50;
+
     public int MaxHealth { get; private set; } = 100;
+
     public float CurrentHealth
     {
         get => health;
@@ -34,7 +39,6 @@ public class Hero : Singleton<Hero>
     private float health;
 
     public int XP { get; private set; }
-    public int Gold { get; private set; }
 
     private Vector2Int m_minMaxLocationActions = new(2, 5);
     private int m_actionsLeft;
@@ -48,7 +52,7 @@ public class Hero : Singleton<Hero>
 
     private bool isHerosTurn = false;
 
-    private HeroState m_currentState;
+    public HeroState m_currentState;
 
     #region Unity Methods
 
@@ -78,7 +82,7 @@ public class Hero : Singleton<Hero>
             m_currentState = HeroState.Dead;
         }
 
-        if (inCombat)
+        if (inCombat && m_currentState == HeroState.Encounter)
         {
             if (isHerosTurn && !attacking)
             {
@@ -89,6 +93,8 @@ public class Hero : Singleton<Hero>
             {
                 StartCoroutine(EncounterManager.Instance.Attack());
             }
+
+            return;
         }
 
         if (inAction) return;
@@ -118,6 +124,14 @@ public class Hero : Singleton<Hero>
             case HeroState.None:
                 Debug.Log("Nothing Happens!");
                 break;
+
+            case HeroState.Heal:
+                HeroHeal();
+                break;
+
+            case HeroState.Sell:
+                HeroSell();
+                break;
         }
     }
 
@@ -135,13 +149,38 @@ public class Hero : Singleton<Hero>
         CurrentLocation = GetRandomLocation(StartingLocations);
     }
 
+    private void HeroHeal()
+    {
+        inAction = true;
+
+    }
+
+    private void HeroSell()
+    {
+        inAction = true;
+        StartCoroutine(Sell());
+    }
+
+    private IEnumerator Sell()
+    {
+        m_console.AddLine("The hero encountered a local merchant and has decided to try and sell his roots");
+        yield return new WaitForSeconds(3f);
+        m_console.AddLine($"The hero has sold his items for {Inventory.Instance.GetTotalWorth()} Gold!");
+        Gold += Inventory.Instance.GetTotalWorth();
+        Inventory.Instance.RemoveAll();
+        yield return new WaitForSeconds(4.5f);
+
+        StartCoroutine(ChangeState(.5f, HeroState.Idle));
+    }
+
     public void EndCombat()
     {
-        if (inCombat)
-        {
-            inAction = false;
-            inCombat = false;
-        }
+        m_currentState = HeroState.Idle;
+        inAction = false;
+        inCombat = false;
+        isHerosTurn = false;
+        EncounterManager.Instance.IsAttacking = false;
+        EncounterManager.Instance.CurrentEnemyType = null;
     }
 
     public void ReciveAttack(EnemyAttack attack)
@@ -181,7 +220,7 @@ public class Hero : Singleton<Hero>
 
     private void HeroIdle()
     {
-        var selectedAction = Random.Range(0, 0);
+        var selectedAction = Random.Range(0, 2);
         inAction = true;
         if (m_actionsLeft > 0)
         {
@@ -191,7 +230,7 @@ public class Hero : Singleton<Hero>
             if (CurrentLocation.EncounterProbability >= chance)
             {
                 currentTargetEnemy = CurrentLocation.GetRandomEnemy();
-                StartCoroutine(ChangeState(1, HeroState.Encounter));
+                StartCoroutine(ChangeState(1f, HeroState.Encounter));
                 return;
             }
 
@@ -199,6 +238,12 @@ public class Hero : Singleton<Hero>
             {
                 case 0:
                     StartCoroutine(ChangeState(1, HeroState.Wander));
+                    return;
+                case 1:
+                    StartCoroutine(ChangeState(1, HeroState.Sell));
+                    return;
+                case 2:
+                    StartCoroutine(ChangeState(1, HeroState.Heal));
                     return;
 
                 default: return;
@@ -222,12 +267,14 @@ public class Hero : Singleton<Hero>
 
     private void HeroEncounter()
     {
+        if (inAction || inCombat || m_currentState != HeroState.Encounter) return;
         inAction = true;
         StartCoroutine(StartCombat());
     }
 
     private IEnumerator StartCombat()
     {
+        Debug.Log("Encountered an enemy!");
         m_console.AddLine($"The hero has encounterd a {currentTargetEnemy.name}");
         yield return new WaitForSeconds(3.5f);
         inCombat = true;

@@ -26,4 +26,4 @@ MonoBehaviour:
   Attacks:
   - Name: Root Rumble
     UsagePrompt: Their rooty forms were all that was needed to destroy the hero!
-    BasePower: 20
+    BasePower: 10
