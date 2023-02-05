@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 104315603}
   - component: {fileID: 104315605}
   - component: {fileID: 104315604}
+  - component: {fileID: 104315606}
   m_Layer: 0
   m_Name: Log
   m_TagString: Untagged
@@ -149,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104315602}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 3.79, z: 3.97}
+  m_LocalPosition: {x: -0, y: 5.07, z: 3.97}
   m_LocalScale: {x: 82.7934, y: 82.7934, z: 82.7934}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -208,6 +209,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104315602}
   m_Mesh: {fileID: -293502825896984990, guid: 8b13ce1bbaa94d2488da01a2f3dc811f, type: 3}
+--- !u!114 &104315606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104315602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6626fd8c8aedc846ad12d631989a954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  localHoverPos: {x: 0, y: 3.48, z: 3.97}
 --- !u!1 &196788552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,7 +6958,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1.0426159, y: -264.88162, z: -132.36086, w: -3.1080315}
+  m_margin: {x: -1.0426159, y: -264.88162, z: -118.452126, w: -3.1080315}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
