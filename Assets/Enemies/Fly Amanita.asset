@@ -17,10 +17,10 @@ MonoBehaviour:
   Stats:
   - name: 
     attribute: 1
-    Modifier: 70
+    Modifier: 7
   - name: 
     attribute: 2
-    Modifier: 30
+    Modifier: 3
   DropTable:
     items:
     - item: {fileID: 11400000, guid: 285b0db3a1ae0cd469950cc85a7dad96, type: 2}
@@ -30,4 +30,4 @@ MonoBehaviour:
   Attacks:
   - Name: Poison
     UsagePrompt: Hero cannot resist the vivid colors of fly amanita and takes a bite!
-    BasePower: 30
+    BasePower: 22
