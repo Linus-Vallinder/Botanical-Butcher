@@ -16,5 +16,14 @@ public class GameControls : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            Time.timeScale = 5.0f;
+        }
+        else if(!Mathf.Approximately(Time.timeScale, 1.0f))
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 }
