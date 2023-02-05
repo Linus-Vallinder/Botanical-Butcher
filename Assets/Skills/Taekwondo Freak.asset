@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Taekwondo  Freak
   PowerLevel: 3
   XpNeededToUnlock: 100
-  Icon: {fileID: 0}
+  Icon: {fileID: -3734750453361055756, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   Description: Bruce Lee movies was the shit growing up!
   SkillUsagePrompts:
   - With a precise and powerful kick, the hero sent the enemy flying, leaving them

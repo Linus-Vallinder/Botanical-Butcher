@@ -122,19 +122,19 @@ public class SkillButtonAnimations : MonoBehaviour
     public void OpenInfoPanel()
     {
         AudioManager.Instance.PlaySound("SkillDescription");
-        Debug.Log("Open info panel");
+        //Debug.Log("Open info panel");
         infoTarget = 0.0f;
     }
 
     public void CloseInfoPanel()
     {
-        Debug.Log("Close info panel");
+        //Debug.Log("Close info panel");
         infoTarget = 1.0f;
     }
 
     public void UnlockSkill()
     {
-        Debug.Log("Unlock skill");
+        //Debug.Log("Unlock skill");
         rootTarget = 0.0f;
         CloseInfoPanel();
         for(int i = 0; i < growParticles.Length; ++i)
@@ -148,7 +148,7 @@ public class SkillButtonAnimations : MonoBehaviour
 
     public void LockSkill()
     {
-        Debug.Log("Lock skill");
+        //Debug.Log("Lock skill");
         rootTarget = 1.0f;
         skillName.color = cyan;
         skillIcon.material = cyanMaterial;

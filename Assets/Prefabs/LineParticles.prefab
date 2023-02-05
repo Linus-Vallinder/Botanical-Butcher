@@ -258,6 +258,46 @@ PrefabInstance:
       propertyPath: ShapeModule.m_MeshRenderer
       value: 
       objectReference: {fileID: 7204624847697517663}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.13333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.2979708
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.5942129
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 0.047058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.29681382
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893588148234017883, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.36668187
+      objectReference: {fileID: 0}
     - target: {fileID: 6893588148234017884, guid: fbd9f07c415e9f8408486f0849ed35f9, type: 3}
       propertyPath: m_Name
       value: EmitterDust
@@ -285,6 +325,10 @@ PrefabInstance:
       propertyPath: ShapeModule.m_MeshRenderer
       value: 
       objectReference: {fileID: 7204624847697517663}
+    - target: {fileID: 3491508588998265493, guid: 19512adf26fcccb4695ad25db867d2e2, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3491508588998265498, guid: 19512adf26fcccb4695ad25db867d2e2, type: 3}
       propertyPath: m_Name
       value: EmitterActive
@@ -357,8 +401,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7204624847697517663}
     - target: {fileID: 1637716496097651202, guid: 4a0f985a1feacf2479fa5d1ce9806d7a, type: 3}
+      propertyPath: ShapeModule.m_MeshSpawn.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637716496097651202, guid: 4a0f985a1feacf2479fa5d1ce9806d7a, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.8
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637716496097651202, guid: 4a0f985a1feacf2479fa5d1ce9806d7a, type: 3}
+      propertyPath: ShapeModule.m_MeshSpawn.speed.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637716496097651202, guid: 4a0f985a1feacf2479fa5d1ce9806d7a, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1637716496097651204, guid: 4a0f985a1feacf2479fa5d1ce9806d7a, type: 3}
       propertyPath: m_RootOrder
