@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Starting Village
   m_EditorClassIdentifier: 
   Name: Stenhamra
-  HasChurch: 0
+  HasChurch: 1
   SpawnPool:
   - {fileID: 11400000, guid: 2702388fb3f6c6a42bd5c33190df84ca, type: 2}
   EncounterProbability: 40
