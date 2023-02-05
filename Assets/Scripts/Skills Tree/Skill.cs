@@ -11,6 +11,7 @@ namespace Skills
         public int PowerLevel; //Used for random generation of skill tree
         public int XpNeededToUnlock;
         public Mesh Icon;
+        public AudioClip AudioClip;
 
         [Space, TextArea] public string Description;
 

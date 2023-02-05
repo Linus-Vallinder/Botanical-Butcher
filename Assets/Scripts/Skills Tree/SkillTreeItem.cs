@@ -12,6 +12,7 @@ namespace Skills
         [Space, SerializeField] private TextMeshPro m_name;
         [SerializeField] private TextMeshPro m_description;
         [SerializeField] private MeshFilter m_iconRenderer;
+        [SerializeField] private AudioClip m_audioClip;
 
         [Space, SerializeField] private List<SkillTreeItem> m_prerequisite = new();
 
@@ -47,6 +48,7 @@ namespace Skills
             m_name.text = m_skill.Name;
             m_description.text = m_skill.Description;
             m_iconRenderer.sharedMesh = m_skill.Icon;
+            m_audioClip = m_skill.AudioClip;
         }
 
         public void DrawLines()
@@ -92,9 +94,18 @@ namespace Skills
             { 
                 line.Activate();
             }
+            if(m_audioClip)
+            {
+                Invoke("PlaySound", 1.6f);
+            }
             Unlocked = true;
 
             m_console.AddLine($"You have unlocked the [{m_skill.Name}] skill!");
+        }
+
+        void PlaySound()
+        {
+            AudioManager.Instance.PlaySound(m_audioClip);
         }
     }
 }
