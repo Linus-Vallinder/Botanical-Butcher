@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Disfigured Body
   PowerLevel: 1
-  XpNeededToUnlock: 100
+  XpNeededToUnlock: 25
   Icon: {fileID: -1737047391545209578, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: d1c71d55590fe7f4fb88ede44ae3bf1b, type: 3}
   Description: An experiment went wrong, seriously wrong. Enemies will freeze in

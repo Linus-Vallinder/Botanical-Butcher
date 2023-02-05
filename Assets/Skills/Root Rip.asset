@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Root Rip
   m_EditorClassIdentifier: 
   Name: Root RIP
-  PowerLevel: 0
-  XpNeededToUnlock: 0
+  PowerLevel: 4
+  XpNeededToUnlock: 200
   Icon: {fileID: -4807412594268220882, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 79434b0aa1c86fe459153630f991ff0c, type: 3}
   Description: Your roots just got ripped!

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Twister Pro
   m_EditorClassIdentifier: 
   Name: Twister Pro
-  PowerLevel: 3
-  XpNeededToUnlock: 100
+  PowerLevel: 4
+  XpNeededToUnlock: 200
   Icon: {fileID: 5935570250147824185, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 0}
   Description: 'Hand red, Foot blue...
 
     After 20 years if this crap you''ve become

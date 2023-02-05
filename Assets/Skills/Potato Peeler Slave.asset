@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Potato Peeler Slave
   m_EditorClassIdentifier: 
   Name: Potato Peeler Slave
-  PowerLevel: 0
-  XpNeededToUnlock: 0
+  PowerLevel: 3
+  XpNeededToUnlock: 120
   Icon: {fileID: 4172807327893631691, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 6a9a26df6b2b6d74c90d835a58e9a07c, type: 3}
   Description: A lifetime of sneaking onboard boats for free rides gave you this

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Health Regen
   m_EditorClassIdentifier: 
   Name: Health Regen
-  PowerLevel: 0
-  XpNeededToUnlock: 0
+  PowerLevel: 2
+  XpNeededToUnlock: 60
   Icon: {fileID: -2340376556290031828, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 0}
   Description: 

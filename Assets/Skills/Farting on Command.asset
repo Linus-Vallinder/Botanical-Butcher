@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Farting on Command
   m_EditorClassIdentifier: 
   Name: Farting on Command
-  PowerLevel: 0
-  XpNeededToUnlock: 0
+  PowerLevel: 2
+  XpNeededToUnlock: 60
   Icon: {fileID: 4312068952600025762, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 0608e2d3ad66cc8499abb8b0b7dd40b0, type: 3}
   Description: 
