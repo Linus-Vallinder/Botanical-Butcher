@@ -55,6 +55,8 @@ public class Hero : Singleton<Hero>
 
     public HeroState m_currentState;
 
+    private bool m_gameOver = false;
+
     #region Unity Methods
 
     private void Awake()
@@ -253,16 +255,20 @@ public class Hero : Singleton<Hero>
     private void HeroDead()
     {
         inAction = true;
-        StartCoroutine(Lose());
+        if(!m_gameOver)
+        {
+            m_gameOver = true;
+            StartCoroutine(Lose());
+        }
     }
 
     private IEnumerator Lose()
     {
         MapAnimation.Instance.KillPlayer();
         m_console.AddLine("The hero has reached his final moments, and is DEAD!");
+        m_console.AddLine("Press R to restart.");
         yield return new WaitForSeconds(3.5f);
         inAction = false;
-        m_currentState = HeroState.None;
     }
 
     private void HeroIdle()
