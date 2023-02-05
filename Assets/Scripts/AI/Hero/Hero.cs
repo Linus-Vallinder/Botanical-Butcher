@@ -202,7 +202,7 @@ public class Hero : Singleton<Hero>
     private IEnumerator Heal()
     {
         var notHere = false;
-        if (CurrentLocation.HasChurch) m_console.AddLine("The hero went to the church looking to be healed");
+        if (CurrentLocation.HasChurch) m_console.AddLine("The hero went to the church");
         else
         {
             m_console.AddLine("The hero is looking to be healed but has not found a healer nearby");
