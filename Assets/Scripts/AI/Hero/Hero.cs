@@ -163,18 +163,22 @@ public class Hero : Singleton<Hero>
 
     private IEnumerator Sell()
     {
+        MapAnimation.Instance.SetMerchantVisible(true);
         m_console.AddLine("The hero encountered a local merchant and has decided to try and sell his roots");
         yield return new WaitForSeconds(3f);
+        MapAnimation.Instance.AnimateMerchant();
         m_console.AddLine($"The hero has sold his items for {Inventory.Instance.GetTotalWorth()} Gold!");
         Gold += Inventory.Instance.GetTotalWorth();
         Inventory.Instance.RemoveAll();
         yield return new WaitForSeconds(4.5f);
+        MapAnimation.Instance.SetMerchantVisible(false);
 
         StartCoroutine(ChangeState(.5f, HeroState.Idle));
     }
 
     public void EndCombat()
     {
+        MapAnimation.Instance.SetEnemyVisible(false);
         m_currentState = HeroState.Idle;
         inAction = false;
         inCombat = false;
@@ -190,6 +194,7 @@ public class Hero : Singleton<Hero>
 
     private IEnumerator Attack()
     {
+        MapAnimation.Instance.AnimatePlayer();
         attacking = true;
         var skill = SkillManager.Instance.GetRandomSkill();
         if (skill == null)
@@ -212,6 +217,7 @@ public class Hero : Singleton<Hero>
 
     private IEnumerator Lose()
     {
+        MapAnimation.Instance.KillPlayer();
         m_console.AddLine("The hero has reached his final moments, and is DEAD!");
         yield return new WaitForSeconds(3.5f);
         inAction = false;
@@ -258,6 +264,8 @@ public class Hero : Singleton<Hero>
 
     private void HeroTravel()
     {
+        MapAnimation.Instance.ScrollMap();
+        MapAnimation.Instance.AnimatePlayer();
         inAction = true;
         CurrentLocation = CurrentLocation.GetRandomAccessibleLocation();
         m_console.AddLine($"The hero has traveled to {CurrentLocation.Name}");
@@ -275,6 +283,7 @@ public class Hero : Singleton<Hero>
     private IEnumerator StartCombat()
     {
         Debug.Log("Encountered an enemy!");
+        MapAnimation.Instance.SetEnemyVisible(true);
         m_console.AddLine($"The hero has encounterd a {currentTargetEnemy.name}");
         yield return new WaitForSeconds(3.5f);
         inCombat = true;
@@ -297,6 +306,8 @@ public class Hero : Singleton<Hero>
 
     private void HeroWander()
     {
+        MapAnimation.Instance.ScrollMap();
+        MapAnimation.Instance.AnimatePlayer();
         inAction = true;
         m_console.AddLine($"The hero is taking a stroll around {CurrentLocation.Name} and taking in the sights");
         StartCoroutine(ChangeState(Random.Range(3, 5), HeroState.Idle));
