@@ -68,7 +68,7 @@ public class EncounterManager : Singleton<EncounterManager>
             var attack = CurrentEnemyType.GetRandomAttack();
             m_console.AddLine(attack.UsagePrompt);
             //Do Damage
-            Hero.Instance.ReciveAttack(attack);
+            Hero.Instance.ReciveAttack(attack, CurrentEnemyType);
             yield return new WaitForSeconds(3.5f);
 
             Hero.Instance.SetHerosTurn();
