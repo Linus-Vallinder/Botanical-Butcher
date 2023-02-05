@@ -216,7 +216,7 @@ public class Hero : Singleton<Hero>
             CurrentHealth = Mathf.Clamp(CurrentHealth, CurrentHealth + (MaxHealth * .25f), MaxHealth);
             Gold -= 15;
         }
-        else if(notHere == false)
+        else if(notHere == false && CurrentHealth != MaxHealth)
             m_console.AddLine("The hero lacks funds in order to recivce healing from the church and has to find another method");
         yield return new WaitForSeconds(3f);
 
