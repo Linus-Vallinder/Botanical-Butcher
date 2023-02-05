@@ -12,11 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Fly Amanita
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  attackPower: 0
-  roots: 0
-  XPDropRange: {x: 0, y: 0}
-  Stats: []
+  maxHealth: 40
+  XPDropRange: {x: 25, y: 30}
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 70
+  - name: 
+    attribute: 2
+    Modifier: 30
   DropTable:
-    items: []
-  Attacks: []
+    items:
+    - item: {fileID: 11400000, guid: 285b0db3a1ae0cd469950cc85a7dad96, type: 2}
+      weight: 40
+    - item: {fileID: 11400000, guid: 56e3b26a02b8f7f48a44fa3e81f5bc92, type: 2}
+      weight: 60
+  Attacks:
+  - Name: Poison
+    UsagePrompt: Hero cannot resist the vivid colors of fly amanita and takes a bite!
+    BasePower: 30

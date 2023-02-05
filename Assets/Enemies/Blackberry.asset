@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Blackberry
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  attackPower: 0
-  roots: 0
-  XPDropRange: {x: 0, y: 0}
-  Stats: []
+  maxHealth: 50
+  XPDropRange: {x: 10, y: 20}
+  Stats:
+  - name: 
+    attribute: 0
+    Modifier: 20
   DropTable:
-    items: []
-  Attacks: []
+    items:
+    - item: {fileID: 11400000, guid: 56e3b26a02b8f7f48a44fa3e81f5bc92, type: 2}
+      weight: 50
+  Attacks:
+  - Name: Berry storm
+    UsagePrompt: Picking on berries was dangerous task for our hero!
+    BasePower: 10

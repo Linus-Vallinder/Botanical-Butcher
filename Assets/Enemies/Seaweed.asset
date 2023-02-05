@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Seaweed
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  attackPower: 0
-  roots: 0
-  XPDropRange: {x: 0, y: 0}
-  Stats: []
+  maxHealth: 80
+  XPDropRange: {x: 30, y: 40}
+  Stats:
+  - name: 
+    attribute: 2
+    Modifier: 25
   DropTable:
     items: []
-  Attacks: []
+  Attacks:
+  - Name: Weed
+    UsagePrompt: Sea weed pulls the hero underwater!
+    BasePower: 9

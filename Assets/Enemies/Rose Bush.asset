@@ -12,11 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Rose Bush
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  attackPower: 0
-  roots: 0
-  XPDropRange: {x: 0, y: 0}
-  Stats: []
+  maxHealth: 70
+  XPDropRange: {x: 15, y: 25}
+  Stats:
+  - name: 
+    attribute: 0
+    Modifier: 20
+  - name: 
+    attribute: 1
+    Modifier: 10
+  - name: 
+    attribute: 2
+    Modifier: 70
   DropTable:
-    items: []
-  Attacks: []
+    items:
+    - item: {fileID: 11400000, guid: 56e3b26a02b8f7f48a44fa3e81f5bc92, type: 2}
+      weight: 90
+    - item: {fileID: 11400000, guid: 285b0db3a1ae0cd469950cc85a7dad96, type: 2}
+      weight: 5
+  Attacks:
+  - Name: Pedal
+    UsagePrompt: Rose bush uses razor leaves!
+    BasePower: 10
