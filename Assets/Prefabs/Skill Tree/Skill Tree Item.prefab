@@ -589,6 +589,11 @@ MonoBehaviour:
   - {fileID: 3484772817233015017}
   cyanMaterial: {fileID: 2100000, guid: 209eb999edbe45946af04cf347bf6e3e, type: 2}
   goldMaterial: {fileID: 2100000, guid: 06e46da1ecd60244baa63ea973d51f4d, type: 2}
+  chimes:
+  - {fileID: 8300000, guid: ead8b7d443be9cc4b8f150f196854918, type: 3}
+  - {fileID: 8300000, guid: 5d36b216c5a9ef0438a6c5338e2deccb, type: 3}
+  - {fileID: 8300000, guid: 42cd187e2246a6a43b62bfe2d5d36384, type: 3}
+  - {fileID: 8300000, guid: 26d9128c1e2b82f458237852edb8c92f, type: 3}
 --- !u!1 &3641818555332239733
 GameObject:
   m_ObjectHideFlags: 0
@@ -10862,6 +10867,7 @@ MonoBehaviour:
   m_name: {fileID: 1253208442945611426}
   m_description: {fileID: 191783517844620491}
   m_iconRenderer: {fileID: 8695927050421703723}
+  m_audioClip: {fileID: 0}
   m_prerequisite: []
   m_linePrefab: {fileID: 7204624847697517657, guid: 0581a101aa4219245b2bf32c480ea40f, type: 3}
 --- !u!61 &1294442835100463058
