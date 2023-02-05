@@ -18,7 +18,9 @@ MonoBehaviour:
   Icon: {fileID: -2903181732881090275, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 0}
   Description: Prevents sunlight from ever reaching your foes!
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - The sombrero is so big that it blocks the sun from reaching the enemy, turning
+    them weak.
   ShowStats: 0
   Stats:
   - name: 

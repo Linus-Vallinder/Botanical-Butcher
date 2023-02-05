@@ -18,7 +18,8 @@ MonoBehaviour:
   Icon: {fileID: -1143143216044402749, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: ad0a6509e94b6e34981122e2438b20e0, type: 3}
   Description: You got an axe in the face...
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - The axe hits the enemy, and you feel good about it
   ShowStats: 0
   Stats:
   - name: 

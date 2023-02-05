@@ -18,7 +18,8 @@ MonoBehaviour:
   Icon: {fileID: 3669872669915523194, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: b735df23db9ee0e4984684a9a22eb4c5, type: 3}
   Description: Plants are scared of you!
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - Protection from dirt is the best way when killing these wretched enemies
   ShowStats: 0
   Stats:
   - name: 

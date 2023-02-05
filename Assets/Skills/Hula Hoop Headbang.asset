@@ -18,7 +18,9 @@ MonoBehaviour:
   Icon: {fileID: -6732973674694645232, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 0d07da234cc44bc48abcd25a5df72a64, type: 3}
   Description: A combat technique that makes enemies lose all skills!
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - Holy crap that was effective. Hopefully the hero doesn't attend a rock concert
+    after this
   ShowStats: 0
   Stats:
   - name: 

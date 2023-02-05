@@ -18,7 +18,8 @@ MonoBehaviour:
   Icon: {fileID: 4312068952600025762, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 0608e2d3ad66cc8499abb8b0b7dd40b0, type: 3}
   Description: The smell will kill you
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - Ohh the gasses!!! Good thing the enemy doesn't have fire
   ShowStats: 0
   Stats:
   - name: 
