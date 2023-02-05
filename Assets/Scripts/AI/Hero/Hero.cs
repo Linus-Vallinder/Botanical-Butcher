@@ -21,7 +21,7 @@ public class Hero : Singleton<Hero>
     public Location CurrentLocation { get; private set; }
 
     public int MaxHealth { get; private set; } = 100;
-    public int CurrentHealth
+    public float CurrentHealth
     {
         get => health;
         private set
@@ -31,7 +31,7 @@ public class Hero : Singleton<Hero>
         }
     }
 
-    private int health;
+    private float health;
 
     public int XP { get; private set; }
     public int Gold { get; private set; }
@@ -173,7 +173,7 @@ public class Hero : Singleton<Hero>
 
     private IEnumerator Lose()
     {
-        m_console.AddLine("The hero has reach is final moments, and is DEAD!");
+        m_console.AddLine("The hero has reached his final moments, and is DEAD!");
         yield return new WaitForSeconds(3.5f);
         inAction = false;
         m_currentState = HeroState.None;

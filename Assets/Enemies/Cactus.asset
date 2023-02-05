@@ -18,4 +18,7 @@ MonoBehaviour:
   XPDropRange: {x: 20, y: 50}
   Stats: []
   DropTable: []
-  Attacks: []
+  Attacks:
+  - Name: Root Rumble
+    UsagePrompt: Their rooty forms were all that was needed to destroy the hero!
+    BasePower: 20
