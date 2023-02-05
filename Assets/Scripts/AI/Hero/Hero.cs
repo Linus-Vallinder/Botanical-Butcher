@@ -210,7 +210,7 @@ public class Hero : Singleton<Hero>
         }
         yield return new WaitForSeconds(3f);
 
-        if (CurrentLocation.HasChurch && Gold >= 15 && notHere == false)
+        if (CurrentLocation.HasChurch && Gold >= 15 && notHere == false && CurrentHealth != MaxHealth)
         {
             m_console.AddLine("The hero made a small donation to the church and in return he has been healed.");
             CurrentHealth = Mathf.Clamp(CurrentHealth, CurrentHealth + (MaxHealth * .25f), MaxHealth);
