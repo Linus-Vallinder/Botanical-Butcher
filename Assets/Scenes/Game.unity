@@ -430,6 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragSpeed: 10
+  scrollSpeed: 8
   zoomSpeed: 3
   zoomMinMax: {x: 2, y: 8}
   movementClamp: {x: 10, y: 10}
@@ -6030,6 +6031,7 @@ GameObject:
   - component: {fileID: 1155617392}
   - component: {fileID: 1155617393}
   - component: {fileID: 1155617394}
+  - component: {fileID: 1155617395}
   m_Layer: 0
   m_Name: ----- Game Manager -----
   m_TagString: Untagged
@@ -6247,6 +6249,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17cbade3388dda442a562b5a16d1bb9c, type: 3}
   - {fileID: 8300000, guid: 3d438a6392927e5418fdb316f6c94e42, type: 3}
   audioPrefab: {fileID: 5518644855973818748, guid: 9adeca7d77aea1c4d84214d9416acc42, type: 3}
+--- !u!114 &1155617395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155617387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04512de1fbd28a646bdb545b4688f323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1178539225
 GameObject:
   m_ObjectHideFlags: 0
