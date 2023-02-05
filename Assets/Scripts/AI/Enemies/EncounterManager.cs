@@ -44,6 +44,7 @@ public class EncounterManager : Singleton<EncounterManager>
 
         if (m_currentHealth <= 0)
         {
+            m_console.AddLine($"The hero has defeated the {CurrentEnemyType.name} Monster!");
             Hero.Instance.EndCombat();
             Hero.Instance.AddXP(Mathf.RoundToInt(Random.Range(CurrentEnemyType.XPDropRange.x, CurrentEnemyType.XPDropRange.y)));
         }

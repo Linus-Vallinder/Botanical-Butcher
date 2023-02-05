@@ -54,6 +54,11 @@ public class Hero : Singleton<Hero>
 
     private void Update()
     {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.P))
+            AddXP(1000);
+#endif
+
         if (inCombat)
         {
             if (isHerosTurn && !attacking)
