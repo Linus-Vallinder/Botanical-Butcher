@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd379a44ddc0cda469f8a0ea944f08c4, type: 3}
-  m_Name: Hidden Root Village
+  m_Name: Some Kind Of Temple
   m_EditorClassIdentifier: 
-  Name: Hidden Root Village
-  HasChurch: 1
+  Name: Some Kind Of Temple
+  HasChurch: 0
   SpawnPool:
   - {fileID: 11400000, guid: c60cb1daf456d9340a6113f617db0a61, type: 2}
-  - {fileID: 11400000, guid: 48227297e123ede4093fb2b93bc3f221, type: 2}
-  EncounterProbability: 40
+  - {fileID: 11400000, guid: 93795b0d22da27c4eb7181c61d10cf84, type: 2}
+  - {fileID: 11400000, guid: 33063dd79f1eee0489c29a64793cb296, type: 2}
+  EncounterProbability: 30.5
   AccessibleLocations:
-  - {fileID: 11400000, guid: ca093bbd19569c144b07f6897e83f120, type: 2}
-  - {fileID: 11400000, guid: 16986349f2c7ef745879cd2c12fa4b68, type: 2}
-  - {fileID: 11400000, guid: 6e1ded491a1f53c4e87081bc4bb06fab, type: 2}
+  - {fileID: 11400000, guid: c8762453cfc38bb41a2b62e23d72ef04, type: 2}
+  - {fileID: 11400000, guid: 8ed4a386f8ab1a7489bbdde4bb2f08e3, type: 2}

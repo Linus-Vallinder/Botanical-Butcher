@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd379a44ddc0cda469f8a0ea944f08c4, type: 3}
+  m_Name: Far Away Mountain
+  m_EditorClassIdentifier: 
+  Name: Far Away Mountain
+  HasChurch: 1
+  SpawnPool:
+  - {fileID: 11400000, guid: 48227297e123ede4093fb2b93bc3f221, type: 2}
+  - {fileID: 11400000, guid: 03986c848a2722142a9ea2aa7b0dc85f, type: 2}
+  - {fileID: 11400000, guid: 020771aaecf44dd43bec9a4f8836339f, type: 2}
+  EncounterProbability: 43.7
+  AccessibleLocations:
+  - {fileID: 11400000, guid: 4e1a14b2626d8bf4dae4eee4497f0d86, type: 2}
+  - {fileID: 11400000, guid: cbad6e98864ca254f82159f1baf0f339, type: 2}
+  - {fileID: 11400000, guid: 3d8206ac6adb7bb4aaf21e09521478ab, type: 2}
+  - {fileID: 11400000, guid: 8ed4a386f8ab1a7489bbdde4bb2f08e3, type: 2}
+  - {fileID: 11400000, guid: 39b50f9bbf8e5504b9966ba12723bdaf, type: 2}

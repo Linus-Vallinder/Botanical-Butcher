@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd379a44ddc0cda469f8a0ea944f08c4, type: 3}
+  m_Name: Exotic Island
+  m_EditorClassIdentifier: 
+  Name: Exotic Island
+  HasChurch: 1
+  SpawnPool:
+  - {fileID: 11400000, guid: ae54d97648892424788f1777fac54859, type: 2}
+  - {fileID: 11400000, guid: a85f5dbae715eae4b8cbbcb37249b478, type: 2}
+  - {fileID: 11400000, guid: fe6295c5a2a0db54b8c9273518dad84d, type: 2}
+  - {fileID: 11400000, guid: c60cb1daf456d9340a6113f617db0a61, type: 2}
+  EncounterProbability: 60
+  AccessibleLocations:
+  - {fileID: 11400000, guid: 16986349f2c7ef745879cd2c12fa4b68, type: 2}
+  - {fileID: 11400000, guid: 00e26867c0cd54c4587903bfe13b7b5b, type: 2}
+  - {fileID: 11400000, guid: c8762453cfc38bb41a2b62e23d72ef04, type: 2}
+  - {fileID: 11400000, guid: f3bbcff16e069ef42822a956c7065ef5, type: 2}
+  - {fileID: 11400000, guid: 8ed4a386f8ab1a7489bbdde4bb2f08e3, type: 2}
