@@ -13,11 +13,20 @@ MonoBehaviour:
   m_Name: Hula Hoop Headbang
   m_EditorClassIdentifier: 
   Name: Hula Hoop Headbang
-  PowerLevel: 1
-  XpNeededToUnlock: 100
+  PowerLevel: 2
+  XpNeededToUnlock: 60
   Icon: {fileID: -6732973674694645232, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
-  AudioClip: {fileID: 8300000, guid: 1cf3c5ef9ff6d3f488068e06940a3598, type: 3}
+  AudioClip: {fileID: 8300000, guid: 0d07da234cc44bc48abcd25a5df72a64, type: 3}
   Description: A combat technique that makes enemies lose all skills!
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 3
+    Modifier: 10
+  - name: 
+    attribute: 1
+    Modifier: 20
+  - name: 
+    attribute: 5
+    Modifier: 5

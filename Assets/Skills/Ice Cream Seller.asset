@@ -14,9 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Ice Cream Seller
   PowerLevel: 2
-  XpNeededToUnlock: 100
+  XpNeededToUnlock: 60
   Icon: {fileID: 7255511926630097859, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 0}
   Description: Your cheap products are great for giving headaches
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 3
+    Modifier: 10
+  - name: 
+    attribute: 4
+    Modifier: 10
+  - name: 
+    attribute: 5
+    Modifier: 5

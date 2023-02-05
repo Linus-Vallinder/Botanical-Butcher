@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Taekwondo Freak
   m_EditorClassIdentifier: 
   Name: Taekwondo  Freak
-  PowerLevel: 3
-  XpNeededToUnlock: 100
+  PowerLevel: 4
+  XpNeededToUnlock: 200
   Icon: {fileID: -3734750453361055756, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 3d438a6392927e5418fdb316f6c94e42, type: 3}
   Description: Bruce Lee movies was the shit growing up!
@@ -30,4 +30,10 @@ MonoBehaviour:
   - The hero's expertise in Taekwondo proved to be a formidable weapon, leaving the
     enemy dazed and battered after a series of precise and powerful strikes.
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 0
+    Modifier: 35
+  - name: 
+    attribute: 2
+    Modifier: 15

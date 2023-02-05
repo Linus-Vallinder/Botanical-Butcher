@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Twister Pro
   m_EditorClassIdentifier: 
   Name: Twister Pro
-  PowerLevel: 3
-  XpNeededToUnlock: 100
+  PowerLevel: 4
+  XpNeededToUnlock: 200
   Icon: {fileID: 5935570250147824185, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 0}
   Description: 'Hand red, Foot blue...
 
     After 20 years if this crap you''ve become
@@ -32,4 +33,10 @@ MonoBehaviour:
   - The hero's body became a blur as they spun and twisted on the Twister board,
     using their momentum to send the enemy flying.
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: Ability to Stand in Weird Positions
+    attribute: 1
+    Modifier: 20
+  - name: 
+    attribute: 2
+    Modifier: 5
