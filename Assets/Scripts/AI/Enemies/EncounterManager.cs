@@ -41,8 +41,11 @@ public class EncounterManager : Singleton<EncounterManager>
     {
         m_console.AddLine($"- [{skill.GetRandomUsagePrompt()}] - ");
         m_currentHealth -= 100; //This will be influenced by the skills
-        Hero.Instance.AddXP(Mathf.RoundToInt(Random.Range(CurrentEnemyType.XPDropRange.x, CurrentEnemyType.XPDropRange.y)));
 
-        if (m_currentHealth <= 0) Hero.Instance.EndCombat();
+        if (m_currentHealth <= 0)
+        {
+            Hero.Instance.EndCombat();
+            Hero.Instance.AddXP(Mathf.RoundToInt(Random.Range(CurrentEnemyType.XPDropRange.x, CurrentEnemyType.XPDropRange.y)));
+        }
     }
 }
