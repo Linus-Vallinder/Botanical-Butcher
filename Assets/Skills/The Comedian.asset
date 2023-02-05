@@ -27,7 +27,9 @@ MonoBehaviour:
 
     My Fist
     to your Face!!'
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - As the hero told his joke not only his enemy but everyone nearby got dealt a
+    great amount of damage
   ShowStats: 0
   Stats:
   - name: 

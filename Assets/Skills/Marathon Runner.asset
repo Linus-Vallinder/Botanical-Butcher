@@ -18,7 +18,9 @@ MonoBehaviour:
   Icon: {fileID: -8350877902711841524, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 6ef4b1765c1c9bf42853a33ad17b6d9b, type: 3}
   Description: You once ran to the subway, never again.
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - With lightning speed, the hero sprinted toward the enemy, using their momentum
+    to deliver a crushing blow.
   ShowStats: 0
   Stats:
   - name: 

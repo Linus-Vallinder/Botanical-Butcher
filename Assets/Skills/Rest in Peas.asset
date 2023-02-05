@@ -18,7 +18,15 @@ MonoBehaviour:
   Icon: {fileID: -8405868601214571181, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 9609255ae2eeb49468d8671364c1a0ec, type: 3}
   Description: Like peas in a pod all of your plant friends will die alongside you
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - With a flick of their wrist, the hero sent a shower of peas raining down on the
+    enemy, leaving them reeling and vulnerable to attack.
+  - The hero's dexterity was on full display as they pelted the enemy with a barrage
+    of peas, leaving them struggling to see and defend themselves.
+  - The enemy was caught off guard as the hero unleashed a barrage of peas, leaving
+    them battered and stunned.
+  - In a matter of moments, the hero had transformed a simple bag of peas into a
+    weapon, using it to bring the enemy to their knees and claim victory.
   ShowStats: 0
   Stats:
   - name: 
