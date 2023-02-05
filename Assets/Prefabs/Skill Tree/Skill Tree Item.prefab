@@ -400,6 +400,7 @@ MonoBehaviour:
   debug: 0
   skillName: {fileID: 1253208442945611426}
   skillInfo: {fileID: 191783517844620491}
+  skillCost: {fileID: 2384681830653653099}
   roots:
   - {fileID: 1460423764579999736}
   - {fileID: 4822415978435864522}
@@ -10583,8 +10584,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291354486
-  m_fontColor: {r: 0.46274513, g: 0.8745099, b: 0.7843138, a: 1}
+    rgba: 4287872302
+  m_fontColor: {r: 0.18039216, g: 0.7411765, b: 0.5764706, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

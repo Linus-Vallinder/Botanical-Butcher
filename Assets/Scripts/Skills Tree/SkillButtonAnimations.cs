@@ -8,6 +8,7 @@ public class SkillButtonAnimations : MonoBehaviour
 
     [SerializeField] TextMeshPro skillName;
     [SerializeField] TextMeshPro skillInfo;
+    [SerializeField] TextMeshPro skillCost;
 
     [SerializeField] List<SkinnedMeshRenderer> roots = new List<SkinnedMeshRenderer>();
     [SerializeField] SkinnedMeshRenderer infoPanel;
@@ -46,6 +47,7 @@ public class SkillButtonAnimations : MonoBehaviour
         }
         infoPanel.SetBlendShapeWeight(0, 100.0f);
         skillInfo.alpha = 0.0f;
+        skillCost.alpha = skillInfo.alpha;
         startScale = transform.localScale.x;
         skillName.color = cyan;
     }
@@ -83,6 +85,7 @@ public class SkillButtonAnimations : MonoBehaviour
             infoPanel.SetBlendShapeWeight(0, curveValue * 100.0f);
             transform.localScale = Vector3.one * Mathf.Lerp(startScale, startScale * infoPanelOpenScale, 1.0f - curveValue);
             skillInfo.alpha = 1.0f - infoValue;
+            skillCost.alpha = skillInfo.alpha;
         }
         else if (infoTarget < infoValue)
         {
@@ -92,6 +95,7 @@ public class SkillButtonAnimations : MonoBehaviour
             infoPanel.SetBlendShapeWeight(0, curveValue * 100.0f);
             transform.localScale = Vector3.one * Mathf.Lerp(startScale, startScale * infoPanelOpenScale, 1.0f - curveValue);
             skillInfo.alpha = 1.0f - infoValue;
+            skillCost.alpha = skillInfo.alpha;
         }
 
         if (rootTarget > rootValue)
