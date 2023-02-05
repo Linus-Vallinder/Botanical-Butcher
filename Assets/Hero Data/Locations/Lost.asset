@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd379a44ddc0cda469f8a0ea944f08c4, type: 3}
+  m_Name: Lost
+  m_EditorClassIdentifier: 
+  Name: Lost
+  HasChurch: 1
+  SpawnPool:
+  - {fileID: 11400000, guid: 2e1a75bd9f165d34b9a0d18dffc7580f, type: 2}
+  - {fileID: 11400000, guid: a85f5dbae715eae4b8cbbcb37249b478, type: 2}
+  - {fileID: 11400000, guid: 90f6bf551794d9341bfbba6d4e91d498, type: 2}
+  - {fileID: 11400000, guid: 0dd68bcfae26d934287846c4e67127ff, type: 2}
+  EncounterProbability: 55.2
+  AccessibleLocations:
+  - {fileID: 11400000, guid: 1b259ad66b5714c4eb5e8f0fafa2540c, type: 2}
+  - {fileID: 11400000, guid: c8762453cfc38bb41a2b62e23d72ef04, type: 2}
+  - {fileID: 11400000, guid: a5d9a0db9034d4f408f98166a19a2404, type: 2}
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 39b50f9bbf8e5504b9966ba12723bdaf, type: 2}
