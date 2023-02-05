@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: The Comedian
   m_EditorClassIdentifier: 
   Name: The Comedian
-  PowerLevel: 4
-  XpNeededToUnlock: 500
+  PowerLevel: 6
+  XpNeededToUnlock: 1500
   Icon: {fileID: 4419392265131917430, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 7c274c696524ae5479f623c46c450acd, type: 3}
   Description: 'Knock Knock

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Master of Kisses
   PowerLevel: 3
-  XpNeededToUnlock: 120
+  XpNeededToUnlock: 150
   Icon: {fileID: 3384096722986198500, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 615dc89cf28893b4d9153d73a461b093, type: 3}
   Description: Your sensual lips are famous for giving heart attacks

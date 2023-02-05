@@ -11,6 +11,7 @@ namespace Skills
         [SerializeField] private Skill m_skill;
         [Space, SerializeField] private TextMeshPro m_name;
         [SerializeField] private TextMeshPro m_description;
+        [SerializeField] private TextMeshPro m_price;
         [SerializeField] private MeshFilter m_iconRenderer;
         [SerializeField] private AudioClip m_audioClip;
 
@@ -47,6 +48,7 @@ namespace Skills
 
             m_name.text = m_skill.Name;
             m_description.text = m_skill.Description;
+            m_price.text = $"{m_skill.XpNeededToUnlock}";
             m_iconRenderer.sharedMesh = m_skill.Icon;
             m_audioClip = m_skill.AudioClip;
         }

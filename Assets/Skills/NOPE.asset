@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: NOPE
   m_EditorClassIdentifier: 
   Name: NOPE
-  PowerLevel: 1
-  XpNeededToUnlock: 50
+  PowerLevel: 3
+  XpNeededToUnlock: 150
   Icon: {fileID: -697805398205969593, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: db06c7dc998f84442b93c45196f08c0f, type: 3}
   Description: Turn around if too many or strong monsters...

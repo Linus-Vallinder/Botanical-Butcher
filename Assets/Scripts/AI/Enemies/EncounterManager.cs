@@ -68,8 +68,9 @@ public class EncounterManager : Singleton<EncounterManager>
             var attack = CurrentEnemyType.GetRandomAttack();
             //Do Damage
             var statText = Hero.Instance.ReciveAttack(attack, CurrentEnemyType);
-            m_console.AddLine($"{statText}{attack.UsagePrompt}");
-            
+            //m_console.AddLine($"{statText}");
+            m_console.AddLine($"{attack.UsagePrompt}");
+
             yield return new WaitForSeconds(3.5f);
 
             Hero.Instance.SetHerosTurn();
@@ -85,23 +86,23 @@ public class EncounterManager : Singleton<EncounterManager>
             switch (stat.attribute)
             {
                 case Attribute.Constitution:
-                    if (stat.Modifier != 0) statText += $"CON:{stat.Modifier} ";
+                    //if (stat.Modifier != 0) statText += $"CON:{stat.Modifier} ";
                     weightedAdvantage += stat.Modifier;
                     weightedAdvantage -= CurrentEnemyType.GetAttributeModifier(EnemyAttribute.Thorny);
                     weightedAdvantage -= CurrentEnemyType.GetAttributeModifier(EnemyAttribute.Poisonous);
                     break;
                 case Attribute.Wisdom:
-                    if (stat.Modifier != 0) statText += $"WIS:{stat.Modifier} ";
+                    //if (stat.Modifier != 0) statText += $"WIS:{stat.Modifier} ";
                     weightedAdvantage += stat.Modifier;
                     weightedAdvantage -= CurrentEnemyType.GetAttributeModifier(EnemyAttribute.Lust);
                     break;
                 case Attribute.Strength:
-                    if (stat.Modifier != 0) statText += $"STR:{stat.Modifier} ";
+                    //if (stat.Modifier != 0) statText += $"STR:{stat.Modifier} ";
                     weightedAdvantage += stat.Modifier;
                     weightedAdvantage -= CurrentEnemyType.GetAttributeModifier(EnemyAttribute.Size);
                     break;
                 case Attribute.Luck:
-                    if (stat.Modifier != 0) statText += $"LUC:{stat.Modifier} ";
+                    //if (stat.Modifier != 0) statText += $"LUC:{stat.Modifier} ";
                     weightedAdvantage += stat.Modifier;
                     break;
                 default:
@@ -109,7 +110,10 @@ public class EncounterManager : Singleton<EncounterManager>
             }
         });
         
-        m_console.AddLine($"{skill.GetRandomUsagePrompt()} [{statText}]");
-        m_currentHealth -= 50 + (int)weightedAdvantage;
+        int attackValue = 20 + (int)weightedAdvantage;
+
+        m_console.AddLine($"{skill.GetRandomUsagePrompt()}");
+        m_console.AddLine($"{attackValue} damage dealt!");
+        m_currentHealth -= attackValue;
     }
 }

@@ -12,11 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Willow
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  attackPower: 0
-  roots: 0
-  XPDropRange: {x: 0, y: 0}
-  Stats: []
+  maxHealth: 160
+  XPDropRange: {x: 50, y: 90}
+  Stats:
+  - name: 
+    attribute: 3
+    Modifier: 6
+  - name: 
+    attribute: 2
+    Modifier: 2
   DropTable:
-    items: []
-  Attacks: []
+    items:
+    - item: {fileID: 11400000, guid: 6921248b23d2644459c3bc9a271f3cee, type: 2}
+      weight: 30
+    - item: {fileID: 11400000, guid: 285b0db3a1ae0cd469950cc85a7dad96, type: 2}
+      weight: 40
+  Attacks:
+  - Name: Tickle
+    UsagePrompt: Willow tickes the hero furiously!
+    BasePower: 11

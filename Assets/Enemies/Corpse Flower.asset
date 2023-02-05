@@ -12,11 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Corpse Flower
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  attackPower: 0
-  roots: 0
-  XPDropRange: {x: 0, y: 0}
-  Stats: []
+  maxHealth: 120
+  XPDropRange: {x: 10, y: 20}
+  Stats:
+  - name: 
+    attribute: 3
+    Modifier: 10
   DropTable:
-    items: []
-  Attacks: []
+    items:
+    - item: {fileID: 11400000, guid: 6921248b23d2644459c3bc9a271f3cee, type: 2}
+      weight: 50
+    - item: {fileID: 11400000, guid: 285b0db3a1ae0cd469950cc85a7dad96, type: 2}
+      weight: 50
+  Attacks:
+  - Name: Smelly
+    UsagePrompt: Hero can't hold his breath and inhales the horrible smell of the
+      corpse flower.
+    BasePower: 5

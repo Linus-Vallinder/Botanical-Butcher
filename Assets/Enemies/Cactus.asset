@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Cactus
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  attackPower: 0
-  roots: 0
-  XPDropRange: {x: 10, y: 20}
-  Stats: []
+  maxHealth: 80
+  XPDropRange: {x: 15, y: 20}
+  Stats:
+  - name: 
+    attribute: 0
+    Modifier: 10
   DropTable:
     items:
     - item: {fileID: 11400000, guid: 56e3b26a02b8f7f48a44fa3e81f5bc92, type: 2}
@@ -24,6 +25,6 @@ MonoBehaviour:
     - item: {fileID: 11400000, guid: 080998e0d49f0344fbd2338bc0368bda, type: 2}
       weight: 5
   Attacks:
-  - Name: Root Rumble
-    UsagePrompt: Their rooty forms were all that was needed to destroy the hero!
-    BasePower: 10
+  - Name: Spiky trap
+    UsagePrompt: Hero hugs the friendly looking cactus. It was a mistake.
+    BasePower: 18

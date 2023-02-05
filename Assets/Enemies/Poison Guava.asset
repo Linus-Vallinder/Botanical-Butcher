@@ -12,11 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Poison Guava
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  attackPower: 0
-  roots: 0
-  XPDropRange: {x: 0, y: 0}
-  Stats: []
+  maxHealth: 75
+  XPDropRange: {x: 30, y: 40}
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 4
+  - name: 
+    attribute: 2
+    Modifier: 2
   DropTable:
-    items: []
-  Attacks: []
+    items:
+    - item: {fileID: 11400000, guid: 0aadc6acc18990247ab5036cd9fcfb48, type: 2}
+      weight: 30
+    - item: {fileID: 11400000, guid: add4d393644792844aad80b6b475e696, type: 2}
+      weight: 30
+  Attacks:
+  - Name: Roll
+    UsagePrompt: Poison guava rolls over the hero!
+    BasePower: 12
