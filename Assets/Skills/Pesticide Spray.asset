@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
+  m_Name: Pesticide Spray
+  m_EditorClassIdentifier: 
+  Name: Pesticide Spray
+  PowerLevel: 3
+  XpNeededToUnlock: 120
+  Icon: {fileID: -577247309135223140, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 8300000, guid: 486193037f8ed47428593e810697149c, type: 3}
+  Description: Goes straight to the roots!
+  SkillUsagePrompts: []
+  ShowStats: 0
+  Stats: []

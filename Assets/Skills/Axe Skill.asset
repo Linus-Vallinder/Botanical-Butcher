@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
+  m_Name: Axe Skill
+  m_EditorClassIdentifier: 
+  Name: Axe Skill
+  PowerLevel: 1
+  XpNeededToUnlock: 25
+  Icon: {fileID: -1143143216044402749, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 8300000, guid: ad0a6509e94b6e34981122e2438b20e0, type: 3}
+  Description: You got an axe in the face...
+  SkillUsagePrompts: []
+  ShowStats: 0
+  Stats:
+  - name: 
+    attribute: 2
+    Modifier: 50

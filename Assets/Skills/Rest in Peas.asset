@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
+  m_Name: Rest in Peas
+  m_EditorClassIdentifier: 
+  Name: Rest in Peas
+  PowerLevel: 4
+  XpNeededToUnlock: 200
+  Icon: {fileID: -8405868601214571181, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 8300000, guid: 9609255ae2eeb49468d8671364c1a0ec, type: 3}
+  Description: Like peas in a pod all of your plant friends will die alongside you
+  SkillUsagePrompts: []
+  ShowStats: 0
+  Stats:
+  - name: 
+    attribute: 2
+    Modifier: 50

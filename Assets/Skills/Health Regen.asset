@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
+  m_Name: Health Regen
+  m_EditorClassIdentifier: 
+  Name: Health Regen
+  PowerLevel: 2
+  XpNeededToUnlock: 60
+  Icon: {fileID: -2340376556290031828, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 0}
+  Description: 
+  SkillUsagePrompts: []
+  ShowStats: 0
+  Stats: []
