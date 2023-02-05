@@ -18,6 +18,16 @@ MonoBehaviour:
   Icon: {fileID: 7255511926630097859, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 0}
   Description: Your cheap products are great for giving headaches
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - Everyone likes ice cream. The enemy gets a headrush
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 3
+    Modifier: 10
+  - name: 
+    attribute: 4
+    Modifier: 10
+  - name: 
+    attribute: 5
+    Modifier: 5

@@ -18,9 +18,20 @@ MonoBehaviour:
   Icon: {fileID: -4807412594268220882, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 79434b0aa1c86fe459153630f991ff0c, type: 3}
   Description: Your roots just got ripped!
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - The hero's strategy was to rip the roots from the ground and use them as weapons,
+    swinging the sturdy tendrils to deliver powerful blows to the enemy.
+  - With a fierce tug, the hero ripped a thick root from the earth and swung it like
+    a club, leaving the enemy battered and stunned.
+  - The hero's strength was on full display as they pulled roots from the ground
+    and used them to deliver devastating blows to the enemy.
+  - The enemy was caught off guard as the hero wielded a barrage of roots like weapons,
+    leaving them struggling to defend themselves against the relentless barrage.
   ShowStats: 0
   Stats:
   - name: 
-    attribute: 2
-    Modifier: 50
+    attribute: 1
+    Modifier: 10
+  - name: 
+    attribute: 0
+    Modifier: 30

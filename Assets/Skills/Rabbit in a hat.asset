@@ -12,12 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
   m_Name: Rabbit in a hat
   m_EditorClassIdentifier: 
-  Name: 
-  PowerLevel: 0
-  XpNeededToUnlock: 0
-  Icon: {fileID: 0}
+  Name: Rabbit in a hat
+  PowerLevel: 5
+  XpNeededToUnlock: 500
+  Icon: {fileID: 1731667710265935208, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 0}
-  Description: 
-  SkillUsagePrompts: []
+  Description: It's a MAGIC trick
+  SkillUsagePrompts:
+  - The hero's weapon of choice was a rabbit in a hat, using its sudden appearance
+    to startle and disorient the enemy.
+  - With a flick of their wrist, the hero produced the rabbit from the hat, sending
+    the enemy jumping back in surprise and leaving them vulnerable to attack.
+  - In a matter of moments, the hero had transformed a simple rabbit in a hat into
+    a weapon, using it to bring the enemy to their knees and claim victory.
+  - The enemy was caught off guard as the hero revealed the rabbit from the hat,
+    leaving them struggling to see and defend themselves against the sudden distraction.
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 5
+    Modifier: 20
+  - name: 
+    attribute: 3
+    Modifier: 25

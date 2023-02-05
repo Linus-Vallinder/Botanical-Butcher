@@ -230,25 +230,35 @@ public class Hero : Singleton<Hero>
         EncounterManager.Instance.CurrentEnemyType = null;
     }
 
-    public void ReciveAttack(EnemyAttack attack, Enemy fromMonster)
+    public string ReciveAttack(EnemyAttack attack, Enemy fromMonster)
     {
         var weightedAdvantage = 0f;
+        var statText = "";
+        float foo;
         foreach (Attribute attribute in System.Enum.GetValues(typeof(Attribute)))
         {
             switch (attribute)
             {
                 case Attribute.Constitution:
                     weightedAdvantage -= SkillManager.Instance.GetAttributeModifier(attribute);
-                    weightedAdvantage += fromMonster.GetAttributeModifier(EnemyAttribute.Thorny);
-                    weightedAdvantage += fromMonster.GetAttributeModifier(EnemyAttribute.Poisonous);
+                    foo = fromMonster.GetAttributeModifier(EnemyAttribute.Thorny);
+                    if (foo != 0) statText += $"Thorny:{foo} ";
+                    weightedAdvantage += foo;
+                    foo = fromMonster.GetAttributeModifier(EnemyAttribute.Poisonous);
+                    if (foo != 0) statText += $"Poision:{foo} ";
+                    weightedAdvantage += foo;
                     break;
                 case Attribute.Wisdom:
                     weightedAdvantage -= SkillManager.Instance.GetAttributeModifier(attribute);
-                    weightedAdvantage += fromMonster.GetAttributeModifier(EnemyAttribute.Lust);
+                    foo = fromMonster.GetAttributeModifier(EnemyAttribute.Lust);
+                    if (foo != 0) statText += $"Lust:{foo} ";
+                    weightedAdvantage += foo;
                     break;
                 case Attribute.Strength:
                     weightedAdvantage -= SkillManager.Instance.GetAttributeModifier(attribute);
-                    weightedAdvantage += fromMonster.GetAttributeModifier(EnemyAttribute.Size);
+                    foo = fromMonster.GetAttributeModifier(EnemyAttribute.Lust);
+                    if (foo != 0) statText += $"Size:{foo} ";
+                    weightedAdvantage += foo;
                     break;
                 case Attribute.Luck:
                     weightedAdvantage -= SkillManager.Instance.GetAttributeModifier(attribute);
@@ -258,6 +268,7 @@ public class Hero : Singleton<Hero>
             }
         }
         CurrentHealth -= attack.BasePower + weightedAdvantage;
+        return statText;
     }
 
     private IEnumerator Attack()
@@ -267,7 +278,10 @@ public class Hero : Singleton<Hero>
         var skill = SkillManager.Instance.GetRandomSkill();
         if (skill == null)
         {
-            m_console.AddLine("The hero lacks any skills and is unable to attack!");
+            m_console.AddLine("The hero lacks skills and tries punching it in the face!");
+            List<Stat> simpleStatList = new();
+            simpleStatList.Add(new Stat("Fist punch", Attribute.Luck, 10f));
+            EncounterManager.Instance.ReciveAttack(new Skill("Fist punch", simpleStatList));
             yield return new WaitForSeconds(2f);
             yield return null;
         }

@@ -18,6 +18,10 @@ MonoBehaviour:
   Icon: {fileID: -3979876171712677494, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: b735df23db9ee0e4984684a9a22eb4c5, type: 3}
   Description: You're not naked anymore. Good for you <3
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - These shiny new clothes baffles the enemies making them stunned
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 5

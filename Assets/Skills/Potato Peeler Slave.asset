@@ -19,6 +19,22 @@ MonoBehaviour:
   AudioClip: {fileID: 8300000, guid: 6a9a26df6b2b6d74c90d835a58e9a07c, type: 3}
   Description: A lifetime of sneaking onboard boats for free rides gave you this
     skill.
-  SkillUsagePrompts: []
+  SkillUsagePrompts:
+  - The hero's weapon of choice was a potato peeler, using its sharp blade to slash
+    and strike at the enemy.
+  - With a swift swipe, the hero brandished the potato peeler, leaving the enemy
+    reeling from the unexpected attack.
+  - The hero's agility was on full display as they wielded the potato peeler with
+    deadly precision, striking the enemy with quick, devastating blows.
+  - The enemy was caught off guard as the hero unleashed a flurry of attacks with
+    the potato peeler, leaving them battered and stunned.
+  - In a matter of moments, the hero had transformed a simple kitchen tool into a
+    weapon, using it to bring the enemy to their knees and claim victory.
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 20
+  - name: 
+    attribute: 0
+    Modifier: 5

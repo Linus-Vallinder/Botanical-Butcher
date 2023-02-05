@@ -30,4 +30,10 @@ MonoBehaviour:
   - The hero's expertise in Taekwondo proved to be a formidable weapon, leaving the
     enemy dazed and battered after a series of precise and powerful strikes.
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 0
+    Modifier: 35
+  - name: 
+    attribute: 2
+    Modifier: 15

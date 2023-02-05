@@ -17,8 +17,12 @@ MonoBehaviour:
   XpNeededToUnlock: 25
   Icon: {fileID: 8989610953761725466, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: c517faacecf3a784abe53b8b05e95809, type: 3}
-  Description: Even after all that juice. Yous till don't need to pee.
+  Description: Even after all that juice. You still don't need to pee.
   SkillUsagePrompts:
-  - 
+  - The hero didn't have to run to the bathroom, leaving all that time for killing
+    instead
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 5
+    Modifier: 5

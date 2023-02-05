@@ -23,6 +23,11 @@ namespace Skills
         public bool ShowStats;
         public List<Stat> Stats = new();
 
+        public Skill(string name, List<Stat> stats) {
+            Name = name;
+            Stats = stats;
+        }
+
         public string GetRandomUsagePrompt()
         {
             if (SkillUsagePrompts.Count == 0) return $"The hero has used the [{Name}] skill!";

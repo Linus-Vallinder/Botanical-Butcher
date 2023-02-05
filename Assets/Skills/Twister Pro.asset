@@ -33,4 +33,10 @@ MonoBehaviour:
   - The hero's body became a blur as they spun and twisted on the Twister board,
     using their momentum to send the enemy flying.
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: Ability to Stand in Weird Positions
+    attribute: 1
+    Modifier: 20
+  - name: 
+    attribute: 2
+    Modifier: 5
