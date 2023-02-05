@@ -33,6 +33,7 @@ public class LogAnimation : MonoBehaviour
             if (droppingDown)
             {
                 droppingDown = false;
+                AudioManager.Instance.PlaySound("SkillDescriptionClose");
             }
         }
     }

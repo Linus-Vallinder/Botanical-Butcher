@@ -10,6 +10,7 @@ public enum HeroState
     Travel,
     Wander,
     Heal,
+    Pockets,
     Sell,
     Encounter,
     Dead,
@@ -53,6 +54,8 @@ public class Hero : Singleton<Hero>
     private bool isHerosTurn = false;
 
     public HeroState m_currentState;
+
+    private bool m_gameOver = false;
 
     #region Unity Methods
 
@@ -132,6 +135,9 @@ public class Hero : Singleton<Hero>
             case HeroState.Sell:
                 HeroSell();
                 break;
+            case HeroState.Pockets:
+                HeroPockets();
+                break;
         }
     }
 
@@ -149,10 +155,47 @@ public class Hero : Singleton<Hero>
         CurrentLocation = GetRandomLocation(StartingLocations);
     }
 
+    private void HeroPockets()
+    {
+        inAction = true;
+        StartCoroutine(CheckPockets());
+    }
+
+    private IEnumerator CheckPockets()
+    {
+        m_console.AddLine($"The hero unsure of his wealth checked all of his pockets and has a total of {Gold} gold.");
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(ChangeState(1, HeroState.Idle));
+    }
+
     private void HeroHeal()
     {
         inAction = true;
+        StartCoroutine(Heal());
+    }
 
+    private IEnumerator Heal()
+    {
+        var notHere = false;
+        if (CurrentLocation.HasChurch) m_console.AddLine("The hero went to the church looking to be healed");
+        else
+        {
+            m_console.AddLine("The hero is looking to be healed but has not found a healer nearby");
+            notHere = true;
+        }
+        yield return new WaitForSeconds(3f);
+
+        if (CurrentLocation.HasChurch && Gold >= 15 && notHere == false)
+        {
+            m_console.AddLine("The hero made a small donation to the church and in return he has been healed.");
+            CurrentHealth = Mathf.Clamp(CurrentHealth, CurrentHealth + (MaxHealth * .25f), MaxHealth);
+            Gold -= 15;
+        }
+        else if(notHere == false)
+            m_console.AddLine("The hero lacks funds in order to recivce healing from the church and has to find another method");
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine(ChangeState(1, HeroState.Idle));
     }
 
     private void HeroSell()
@@ -237,25 +280,35 @@ public class Hero : Singleton<Hero>
     private void HeroDead()
     {
         inAction = true;
-        StartCoroutine(Lose());
+        if(!m_gameOver)
+        {
+            m_gameOver = true;
+            StartCoroutine(Lose());
+        }
     }
 
     private IEnumerator Lose()
     {
         MapAnimation.Instance.KillPlayer();
         m_console.AddLine("The hero has reached his final moments, and is DEAD!");
+        m_console.AddLine("Press R to restart.");
         yield return new WaitForSeconds(3.5f);
         inAction = false;
-        m_currentState = HeroState.None;
     }
 
     private void HeroIdle()
     {
-        var selectedAction = Random.Range(0, 2);
+        var selectedAction = Random.Range(0, 4);
         inAction = true;
         if (m_actionsLeft > 0)
         {
             m_actionsLeft--;
+
+            if(CurrentHealth < MaxHealth * .25f && CurrentLocation.HasChurch)
+            {
+                StartCoroutine(ChangeState(1f, HeroState.Heal));
+                return;
+            }
 
             var chance = Random.Range(0, 100);
             if (CurrentLocation.EncounterProbability >= chance)
@@ -275,6 +328,9 @@ public class Hero : Singleton<Hero>
                     return;
                 case 2:
                     StartCoroutine(ChangeState(1, HeroState.Heal));
+                    return;
+                case 3:
+                    StartCoroutine(ChangeState(1, HeroState.Pockets));
                     return;
 
                 default: return;

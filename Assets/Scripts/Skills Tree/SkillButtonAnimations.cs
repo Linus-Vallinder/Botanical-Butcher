@@ -26,6 +26,8 @@ public class SkillButtonAnimations : MonoBehaviour
     [SerializeField] Material cyanMaterial;
     [SerializeField] Material goldMaterial;
 
+    [SerializeField] AudioClip[] chimes;
+
     float rootTarget = 1.0f;
     float rootValue = 1.0f;
     float infoTarget = 1.0f;
@@ -128,6 +130,7 @@ public class SkillButtonAnimations : MonoBehaviour
 
     public void CloseInfoPanel()
     {
+        AudioManager.Instance.PlaySound("SkillDescriptionClose");
         //Debug.Log("Close info panel");
         infoTarget = 1.0f;
     }
@@ -144,6 +147,7 @@ public class SkillButtonAnimations : MonoBehaviour
         skillName.color = gold;
         skillIcon.material = goldMaterial;
         AudioManager.Instance.PlaySound("SkillClick");
+        AudioManager.Instance.PlayRandomSoundFromArray(chimes);
     }
 
     public void LockSkill()
