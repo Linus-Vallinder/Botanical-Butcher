@@ -313,6 +313,7 @@ MonoBehaviour:
   debug: 0
   healthBar: {fileID: 1295581286}
   animSpeed: 2
+  shakeAmpunt: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5962,7 +5963,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   rootsAnimSpeed: 1
   animScaleMultiplier: 0.95
-  counterAnimDelay: 0.2
+  counterAnimDelay: 0.05
 --- !u!23 &1080194734
 MeshRenderer:
   m_ObjectHideFlags: 0

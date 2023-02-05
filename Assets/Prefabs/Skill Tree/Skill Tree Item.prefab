@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1472982178be4c4b8c52c85a24ce134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   skillName: {fileID: 1253208442945611426}
   skillInfo: {fileID: 191783517844620491}
   roots:
