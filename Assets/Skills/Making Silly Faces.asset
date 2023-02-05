@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Making Silly Faces
   m_EditorClassIdentifier: 
   Name: Making Silly Faces
-  PowerLevel: 0
-  XpNeededToUnlock: 0
+  PowerLevel: 2
+  XpNeededToUnlock: 200
   Icon: {fileID: -8713722043019394464, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 2cb19a70ad2b7e846bb9e245da31e03f, type: 3}
-  Description: 
+  Description: Enemies go berserk!
   SkillUsagePrompts: []
   ShowStats: 0
   Stats:

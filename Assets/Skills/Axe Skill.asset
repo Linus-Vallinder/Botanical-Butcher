@@ -23,4 +23,4 @@ MonoBehaviour:
   Stats:
   - name: 
     attribute: 2
-    Modifier: 50
+    Modifier: 10

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Meditating Guru
   m_EditorClassIdentifier: 
   Name: Meditating Guru
-  PowerLevel: 0
-  XpNeededToUnlock: 0
+  PowerLevel: 7
+  XpNeededToUnlock: 1000
   Icon: {fileID: -8249110132493375973, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 91949afe9b20f0b4b876edcaf96b1b24, type: 3}
-  Description: 
+  Description: You thought a lot on life, the ways of nature, the complexity of the
+    world. Did it make you smarter you ask yourself...
   SkillUsagePrompts: []
   ShowStats: 0
   Stats:

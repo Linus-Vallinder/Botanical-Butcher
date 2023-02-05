@@ -17,7 +17,10 @@ MonoBehaviour:
   XpNeededToUnlock: 60
   Icon: {fileID: -2340376556290031828, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 0}
-  Description: 
+  Description: Speaks for itself
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 2
+    Modifier: 20

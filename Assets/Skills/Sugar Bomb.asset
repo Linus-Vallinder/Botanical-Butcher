@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Sugar Bomb
   m_EditorClassIdentifier: 
   Name: Sugar Bomb
-  PowerLevel: 0
-  XpNeededToUnlock: 0
+  PowerLevel: 4
+  XpNeededToUnlock: 400
   Icon: {fileID: -1371676416425380024, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: b2ea371919eda1a4daa2c28baed0d229, type: 3}
-  Description: 
+  Description: Your belly gets big, your ass even bigger, and you get some neck fat.
+    Everyone is intimitated by you now!
   SkillUsagePrompts: []
   ShowStats: 0
   Stats:

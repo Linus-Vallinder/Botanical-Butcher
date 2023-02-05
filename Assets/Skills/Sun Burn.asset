@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Sun Burn
   m_EditorClassIdentifier: 
   Name: Sun Burn
-  PowerLevel: 0
-  XpNeededToUnlock: 0
+  PowerLevel: 1
+  XpNeededToUnlock: 50
   Icon: {fileID: -4110643751450140966, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
   AudioClip: {fileID: 8300000, guid: 18b3352b485659f44af401e3ad4e7338, type: 3}
-  Description: 
+  Description: Your skincolor is red, thus you look mad as hell!
   SkillUsagePrompts: []
   ShowStats: 0
   Stats:
