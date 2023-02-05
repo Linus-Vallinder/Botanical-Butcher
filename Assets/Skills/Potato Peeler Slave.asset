@@ -21,4 +21,10 @@ MonoBehaviour:
     skill.
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 20
+  - name: 
+    attribute: 0
+    Modifier: 5

@@ -20,4 +20,10 @@ MonoBehaviour:
   Description: You once ran to the subway, never again.
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 30
+  - name: 
+    attribute: 2
+    Modifier: 10

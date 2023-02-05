@@ -20,4 +20,10 @@ MonoBehaviour:
   Description: Goes straight to the roots!
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 15
+  - name: 
+    attribute: 0
+    Modifier: 5

@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
   m_Name: Making Silly Faces
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Making Silly Faces
   PowerLevel: 0
   XpNeededToUnlock: 0
-  Icon: {fileID: 0}
-  AudioClip: {fileID: 0}
+  Icon: {fileID: -8713722043019394464, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 8300000, guid: 2cb19a70ad2b7e846bb9e245da31e03f, type: 3}
   Description: 
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 3
+    Modifier: -10
+  - name: 
+    attribute: 1
+    Modifier: 30

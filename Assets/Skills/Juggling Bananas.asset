@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
   m_Name: Juggling Bananas
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Juggling Bananas
   PowerLevel: 0
   XpNeededToUnlock: 0
-  Icon: {fileID: 0}
-  AudioClip: {fileID: 0}
+  Icon: {fileID: 3917596504866293074, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 8300000, guid: 4b054d915fbd0bc4295f9097915f302f, type: 3}
   Description: 
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 1
+    Modifier: 25
+  - name: 
+    attribute: 5
+    Modifier: 10

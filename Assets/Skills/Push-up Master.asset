@@ -30,4 +30,7 @@ MonoBehaviour:
   - With a powerful push, the hero lifted their body up and brought their fist down
     on the enemy with a satisfying thud.
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 0
+    Modifier: 10
