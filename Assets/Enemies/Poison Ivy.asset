@@ -17,10 +17,10 @@ MonoBehaviour:
   Stats:
   - name: 
     attribute: 0
-    Modifier: 35
+    Modifier: 4
   - name: 
     attribute: 1
-    Modifier: 30
+    Modifier: 3
   DropTable:
     items:
     - item: {fileID: 11400000, guid: 56e3b26a02b8f7f48a44fa3e81f5bc92, type: 2}

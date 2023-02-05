@@ -17,7 +17,7 @@ MonoBehaviour:
   Stats:
   - name: 
     attribute: 1
-    Modifier: 80
+    Modifier: 6
   DropTable:
     items:
     - item: {fileID: 11400000, guid: 080998e0d49f0344fbd2338bc0368bda, type: 2}
@@ -27,4 +27,4 @@ MonoBehaviour:
   Attacks:
   - Name: GUN
     UsagePrompt: The enemy has shot the player with his gun!
-    BasePower: 45
+    BasePower: 10

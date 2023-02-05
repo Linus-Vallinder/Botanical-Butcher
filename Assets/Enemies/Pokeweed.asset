@@ -17,7 +17,7 @@ MonoBehaviour:
   Stats:
   - name: 
     attribute: 3
-    Modifier: 10
+    Modifier: 1
   DropTable:
     items: []
   Attacks:

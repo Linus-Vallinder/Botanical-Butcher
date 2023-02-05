@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbfeb39d9fe3784fb3cabeae1c5e7df, type: 3}
   m_Name: Christmas Tree
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  XPDropRange: {x: 10, y: 20}
+  maxHealth: 110
+  XPDropRange: {x: 200, y: 300}
   Stats: []
   DropTable:
     items:
@@ -28,4 +28,4 @@ MonoBehaviour:
   Attacks:
   - Name: Prickly Prick
     UsagePrompt: The tree is made out of spikes... it did damage
-    BasePower: 25
+    BasePower: 10
