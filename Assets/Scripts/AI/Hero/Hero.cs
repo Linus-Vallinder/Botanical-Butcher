@@ -294,6 +294,7 @@ public class Hero : Singleton<Hero>
         }
         Debug.Log($"Hero recives damage {attack.BasePower} + {weightedAdvantage}");
         int totalDamage = attack.BasePower + (int)weightedAdvantage;
+        if(totalDamage < 0) totalDamage = 0;
         CurrentHealth -= totalDamage;
         return totalDamage;
     }
