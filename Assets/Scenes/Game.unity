@@ -6304,6 +6304,10 @@ MonoBehaviour:
   StartingLocations:
   - {fileID: 11400000, guid: 00e26867c0cd54c4587903bfe13b7b5b, type: 2}
   - {fileID: 11400000, guid: a5d9a0db9034d4f408f98166a19a2404, type: 2}
+  - {fileID: 11400000, guid: ca093bbd19569c144b07f6897e83f120, type: 2}
+  - {fileID: 11400000, guid: 6e1ded491a1f53c4e87081bc4bb06fab, type: 2}
+  - {fileID: 11400000, guid: c8762453cfc38bb41a2b62e23d72ef04, type: 2}
+  - {fileID: 11400000, guid: cbad6e98864ca254f82159f1baf0f339, type: 2}
   m_currentState: 0
 --- !u!114 &1155617392
 MonoBehaviour:
