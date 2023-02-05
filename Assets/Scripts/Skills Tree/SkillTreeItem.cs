@@ -75,8 +75,9 @@ namespace Skills
         {
             Debug.LogWarning(Unlocked);
 
-            if (Unlocked ||
-                 !SkillManager.Instance.CanUnlock(this))
+            if ( Unlocked ||
+                 !SkillManager.Instance.CanUnlock(this) ||
+                 Hero.Instance.XP < m_skill.XpNeededToUnlock)
             {
                 Debug.LogWarning("Cannot unlock this skill, it is either already unlocked or you do not have the right prerequisites");
                 return;
