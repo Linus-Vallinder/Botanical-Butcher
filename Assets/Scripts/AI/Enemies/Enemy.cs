@@ -76,4 +76,13 @@ public class Enemy : ScriptableObject
         if (Attacks.Count == 0) return new EnemyAttack("Punch", $"The {this.name} used punch!", 50);
         else return Attacks[Random.Range(0, Attacks.Count)];
     }
+
+    public float GetAttributeModifier(EnemyAttribute attribute)
+        {
+            var total = 0f;
+            Stats.ForEach( stat => {
+                if(stat.attribute == attribute) total += stat.Modifier;
+            });
+            return total;
+        }
 }
