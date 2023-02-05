@@ -230,9 +230,34 @@ public class Hero : Singleton<Hero>
         EncounterManager.Instance.CurrentEnemyType = null;
     }
 
-    public void ReciveAttack(EnemyAttack attack)
+    public void ReciveAttack(EnemyAttack attack, Enemy fromMonster)
     {
-        CurrentHealth -= attack.BasePower;
+        var weightedAdvantage = 0f;
+        foreach (Attribute attribute in System.Enum.GetValues(typeof(Attribute)))
+        {
+            switch (attribute)
+            {
+                case Attribute.Constitution:
+                    weightedAdvantage -= SkillManager.Instance.GetAttributeModifier(attribute);
+                    weightedAdvantage += fromMonster.GetAttributeModifier(EnemyAttribute.Thorny);
+                    weightedAdvantage += fromMonster.GetAttributeModifier(EnemyAttribute.Poisonous);
+                    break;
+                case Attribute.Wisdom:
+                    weightedAdvantage -= SkillManager.Instance.GetAttributeModifier(attribute);
+                    weightedAdvantage += fromMonster.GetAttributeModifier(EnemyAttribute.Lust);
+                    break;
+                case Attribute.Strength:
+                    weightedAdvantage -= SkillManager.Instance.GetAttributeModifier(attribute);
+                    weightedAdvantage += fromMonster.GetAttributeModifier(EnemyAttribute.Size);
+                    break;
+                case Attribute.Luck:
+                    weightedAdvantage -= SkillManager.Instance.GetAttributeModifier(attribute);
+                    break;
+                default:
+                    break;
+            }
+        }
+        CurrentHealth -= attack.BasePower + weightedAdvantage;
     }
 
     private IEnumerator Attack()
