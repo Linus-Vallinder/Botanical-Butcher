@@ -16,6 +16,7 @@ MonoBehaviour:
   PowerLevel: 1
   XpNeededToUnlock: 100
   Icon: {fileID: -6732973674694645232, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 8300000, guid: 1cf3c5ef9ff6d3f488068e06940a3598, type: 3}
   Description: A combat technique that makes enemies lose all skills!
   SkillUsagePrompts: []
   ShowStats: 0

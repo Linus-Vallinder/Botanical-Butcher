@@ -16,6 +16,7 @@ MonoBehaviour:
   PowerLevel: 0
   XpNeededToUnlock: 0
   Icon: {fileID: 6900262399445696130, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 8300000, guid: f1e6abe9f2ea14642a08ad5c6723db9e, type: 3}
   Description: Finally! You can do ONE push up!
   SkillUsagePrompts:
   - With a single, fluid motion, the hero executed a push-up, using the momentum
