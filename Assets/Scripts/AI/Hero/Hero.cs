@@ -255,7 +255,7 @@ public class Hero : Singleton<Hero>
         EncounterManager.Instance.CurrentEnemyType = null;
     }
 
-    public string ReciveAttack(EnemyAttack attack, Enemy fromMonster)
+    public int ReciveAttack(EnemyAttack attack, Enemy fromMonster)
     {
         var weightedAdvantage = 0f;
         var statText = "";
@@ -292,8 +292,10 @@ public class Hero : Singleton<Hero>
                     break;
             }
         }
-        CurrentHealth -= attack.BasePower + weightedAdvantage;
-        return statText;
+        Debug.Log($"Hero recives damage {attack.BasePower} + {weightedAdvantage}");
+        int totalDamage = attack.BasePower + (int)weightedAdvantage;
+        CurrentHealth -= totalDamage;
+        return totalDamage;
     }
 
     private IEnumerator Attack()
