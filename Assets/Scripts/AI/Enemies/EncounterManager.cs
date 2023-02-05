@@ -35,8 +35,14 @@ public class EncounterManager : Singleton<EncounterManager>
             m_console.AddLine($"The hero has defeated the {CurrentEnemyType.name} Monster!");
             yield return new WaitForSeconds(3.5f);
 
-            Hero.Instance.EndCombat();
             Hero.Instance.AddXP(Mathf.RoundToInt(Random.Range(CurrentEnemyType.XPDropRange.x, CurrentEnemyType.XPDropRange.y)));
+
+            var drop = CurrentEnemyType.GetRandomDrop();
+            Inventory.Instance.Add(drop);
+            m_console.AddLine($"{CurrentEnemyType.name} has dropped a {drop.name}!");
+            yield return new WaitForSeconds(2.5f);
+
+            Hero.Instance.EndCombat();
             Hero.Instance.SetHerosTurn();
 
             IsAttacking = false;

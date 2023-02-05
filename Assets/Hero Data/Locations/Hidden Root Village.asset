@@ -16,6 +16,6 @@ MonoBehaviour:
   SpawnPool:
   - {fileID: 11400000, guid: c60cb1daf456d9340a6113f617db0a61, type: 2}
   - {fileID: 11400000, guid: 48227297e123ede4093fb2b93bc3f221, type: 2}
-  EncounterProbability: 35
+  EncounterProbability: 85
   AccessibleLocations:
   - {fileID: 11400000, guid: ca093bbd19569c144b07f6897e83f120, type: 2}

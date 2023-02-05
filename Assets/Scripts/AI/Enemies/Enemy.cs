@@ -63,10 +63,13 @@ public class Enemy : ScriptableObject
     public List<EnemyStat> Stats = new();
 
     [Space]
-    public List<Item> DropTable = new();
+    public DropTable<Item> DropTable = new();
 
     [Space]
     public List<EnemyAttack> Attacks = new();
+
+    public Item GetRandomDrop()
+    => DropTable.GetDrop();
 
     public EnemyAttack GetRandomAttack()
     {

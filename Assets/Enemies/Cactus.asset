@@ -17,7 +17,12 @@ MonoBehaviour:
   roots: 0
   XPDropRange: {x: 20, y: 50}
   Stats: []
-  DropTable: []
+  DropTable:
+    items:
+    - item: {fileID: 11400000, guid: 56e3b26a02b8f7f48a44fa3e81f5bc92, type: 2}
+      weight: 95
+    - item: {fileID: 11400000, guid: 080998e0d49f0344fbd2338bc0368bda, type: 2}
+      weight: 5
   Attacks:
   - Name: Root Rumble
     UsagePrompt: Their rooty forms were all that was needed to destroy the hero!

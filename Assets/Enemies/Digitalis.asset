@@ -17,5 +17,8 @@ MonoBehaviour:
   roots: 0
   XPDropRange: {x: 20, y: 50}
   Stats: []
-  DropTable: []
+  DropTable:
+    items:
+    - item: {fileID: 11400000, guid: 56e3b26a02b8f7f48a44fa3e81f5bc92, type: 2}
+      weight: 10
   Attacks: []
