@@ -40,6 +40,7 @@ public class EncounterManager : Singleton<EncounterManager>
 
         if (m_currentHealth <= 0)
         {
+            MapAnimation.Instance.KillEnemy();
             m_console.AddLine($"The hero has defeated the {CurrentEnemyType.name} Monster!");
             yield return new WaitForSeconds(3.5f);
 
@@ -58,6 +59,8 @@ public class EncounterManager : Singleton<EncounterManager>
 
         if (IsAttacking)
         {
+            MapAnimation.Instance.AnimateEnemy();
+
             m_console.AddLine($"{CurrentEnemyType.name} has attacked!");
             yield return new WaitForSeconds(3.5f);
 
