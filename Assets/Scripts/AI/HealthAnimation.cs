@@ -30,6 +30,7 @@ public class HealthAnimation : Singleton<HealthAnimation>
         {
             transform.position = defaultPosition + Random.insideUnitSphere * shakeAmpunt * Mathf.Abs(targetValue - currentValue);
             currentValue = Mathf.Lerp(currentValue, targetValue, Time.deltaTime * animSpeed);
+            currentValue = Mathf.Clamp01(currentValue);
             healthBar.localScale = new Vector3(1.0f, currentValue, 1.0f);
         }
         else

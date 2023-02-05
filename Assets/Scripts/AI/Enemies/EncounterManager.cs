@@ -61,7 +61,8 @@ public class EncounterManager : Singleton<EncounterManager>
         {
             MapAnimation.Instance.AnimateEnemy();
 
-            m_console.AddLine($"{CurrentEnemyType.name} has attacked!");
+            m_console.AddLine($"{CurrentEnemyType.name} is attacking!");
+
             yield return new WaitForSeconds(3.5f);
 
             var attack = CurrentEnemyType.GetRandomAttack();
@@ -78,6 +79,31 @@ public class EncounterManager : Singleton<EncounterManager>
     public void ReciveAttack(Skill skill)
     {
         m_console.AddLine($"- [{skill.GetRandomUsagePrompt()}] - ");
-        m_currentHealth -= 100; //This will be influenced by the skills
+        var weightedAdvantage = 0f;
+        skill.Stats.ForEach(stat =>  {
+            switch (stat.attribute)
+            {
+                case Attribute.Constitution:
+                    weightedAdvantage += stat.Modifier;
+                    weightedAdvantage -= CurrentEnemyType.GetAttributeModifier(EnemyAttribute.Thorny);
+                    weightedAdvantage -= CurrentEnemyType.GetAttributeModifier(EnemyAttribute.Poisonous);
+                    break;
+                case Attribute.Wisdom:
+                    weightedAdvantage += stat.Modifier;
+                    weightedAdvantage -= CurrentEnemyType.GetAttributeModifier(EnemyAttribute.Lust);
+                    break;
+                case Attribute.Strength:
+                    weightedAdvantage += stat.Modifier;
+                    weightedAdvantage -= CurrentEnemyType.GetAttributeModifier(EnemyAttribute.Size);
+                    break;
+                case Attribute.Luck:
+                    weightedAdvantage += stat.Modifier;
+                    break;
+                default:
+                    break;
+            }
+        });
+        
+        m_currentHealth -= 50 + (int)weightedAdvantage;
     }
 }
