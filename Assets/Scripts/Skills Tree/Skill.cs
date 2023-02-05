@@ -10,7 +10,7 @@ namespace Skills
         public string Name;
         public int PowerLevel; //Used for random generation of skill tree
         public int XpNeededToUnlock;
-        public Sprite Icon;
+        public Mesh Icon;
 
         [Space, TextArea] public string Description;
 

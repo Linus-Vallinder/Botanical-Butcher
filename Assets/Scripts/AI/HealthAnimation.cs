@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class HealthAnimation : Singleton<HealthAnimation>
 {
+    [SerializeField] AudioClip[] hurtClips;
     [SerializeField] bool debug;
     [SerializeField] Transform healthBar;
     [SerializeField] float animSpeed;
+    [SerializeField] float shakeAmpunt;
     float targetValue = 1.0f;
     float currentValue = 1.0f;
+    Vector3 defaultPosition;
+
+    void Start()
+    {
+        defaultPosition = transform.position;
+    }
 
     void Update()
     {
@@ -22,8 +30,13 @@ public class HealthAnimation : Singleton<HealthAnimation>
 
         if(!Mathf.Approximately(targetValue, currentValue))
         {
+            transform.position = defaultPosition + Random.insideUnitSphere * shakeAmpunt * Mathf.Abs(targetValue - currentValue);
             currentValue = Mathf.Lerp(currentValue, targetValue, Time.deltaTime * animSpeed);
             healthBar.localScale = new Vector3(1.0f, currentValue, 1.0f);
+        }
+        else
+        {
+            transform.position = defaultPosition;
         }
     }
 
@@ -33,6 +46,7 @@ public class HealthAnimation : Singleton<HealthAnimation>
     /// <param name="newValue">1 = 100%</param>
     public void SetHealth(float newValue)
     {
+        AudioManager.Instance.PlayRandomSoundFromArray(hurtClips);
         targetValue = newValue;
     }
 }

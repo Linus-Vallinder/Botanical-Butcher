@@ -62,6 +62,19 @@ public class CounterAnimation : Singleton<CounterAnimation>
 
     public void SetCounter(int newAmount)
     {
+        if(newAmount < 25)
+        {
+            AudioManager.Instance.PlaySound("RootXpShort");
+        }
+        else if (newAmount < 50)
+        {
+            AudioManager.Instance.PlaySound("RootXpMedium");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound("RootXpLong");
+        }
+        
         targetAmount = newAmount;
         counterTimer = Time.time;
         if (newAmount > amount)
