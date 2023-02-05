@@ -7,15 +7,20 @@ public class MapAnimation : Singleton<MapAnimation>
     [SerializeField] AnimationCurve animCurve;
     [SerializeField] float scaleMultiplier;
     [SerializeField] float speed;
+    [SerializeField] float scrollSpeed;
+    [SerializeField] float scrollTime;
     [SerializeField] Transform player;
     [SerializeField] Transform enemy;
     [SerializeField] Transform merchant;
     [SerializeField] Material enemyMaterial;
     [SerializeField] Material deathMaterial;
+    [SerializeField] MeshRenderer mapScroll;
 
     Transform activeTransform;
     Vector3 defaultScale;
     float animValue = 1.0f;
+    Vector2 offset = new Vector2(0f, 0f);
+    float scrollTimer;
 
     void Start()
     {
@@ -31,6 +36,12 @@ public class MapAnimation : Singleton<MapAnimation>
         {
             animValue += Time.deltaTime;
             activeTransform.localScale = Vector3.Lerp(defaultScale, defaultScale * scaleMultiplier, animCurve.Evaluate(animValue));
+        }
+
+        if(Time.time < scrollTimer)
+        { 
+            offset += Vector2.up * scrollSpeed * Time.deltaTime;
+            mapScroll.material.SetTextureOffset("_MainTex", offset);
         }
     }
 
@@ -56,6 +67,11 @@ public class MapAnimation : Singleton<MapAnimation>
     {
         activeTransform.localScale = defaultScale;
         animValue = 0.0f;
+    }
+
+    public void ScrollMap()
+    {
+        scrollTimer = Time.time + scrollTime;
     }
 
     public void SetEnemyVisible(bool visible)

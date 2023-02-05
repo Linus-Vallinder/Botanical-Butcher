@@ -264,6 +264,7 @@ public class Hero : Singleton<Hero>
 
     private void HeroTravel()
     {
+        MapAnimation.Instance.ScrollMap();
         MapAnimation.Instance.AnimatePlayer();
         inAction = true;
         CurrentLocation = CurrentLocation.GetRandomAccessibleLocation();
@@ -305,6 +306,7 @@ public class Hero : Singleton<Hero>
 
     private void HeroWander()
     {
+        MapAnimation.Instance.ScrollMap();
         MapAnimation.Instance.AnimatePlayer();
         inAction = true;
         m_console.AddLine($"The hero is taking a stroll around {CurrentLocation.Name} and taking in the sights");
