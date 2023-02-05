@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf6ebfceab4967a4c85bab2e42c8d03b, type: 3}
-  m_Name: Marathon Runner
+  m_Name: Axe Skill
   m_EditorClassIdentifier: 
-  Name: Marathon Runner
-  PowerLevel: 2
-  XpNeededToUnlock: 100
-  Icon: {fileID: -8350877902711841524, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
-  AudioClip: {fileID: 8300000, guid: 6ef4b1765c1c9bf42853a33ad17b6d9b, type: 3}
-  Description: You once ran to the subway, never again.
+  Name: Axe Skill
+  PowerLevel: 0
+  XpNeededToUnlock: 0
+  Icon: {fileID: -1143143216044402749, guid: 6bff461bcd56bed45b67eebd0b6c4112, type: 3}
+  AudioClip: {fileID: 8300000, guid: ad0a6509e94b6e34981122e2438b20e0, type: 3}
+  Description: You got an axe in the face...
   SkillUsagePrompts: []
   ShowStats: 0
-  Stats: []
+  Stats:
+  - name: 
+    attribute: 2
+    Modifier: 50
