@@ -104,6 +104,7 @@ namespace Skills
             Unlocked = true;
 
             m_console.AddLine($"You have unlocked the [{m_skill.Name}] skill!");
+            Hero.Instance.CurrentHealth = Hero.Instance.MaxHealth;
         }
 
         void PlaySound()

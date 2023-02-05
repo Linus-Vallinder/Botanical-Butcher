@@ -31,7 +31,7 @@ public class Hero : Singleton<Hero>
     public float CurrentHealth
     {
         get => health;
-        private set
+        set
         {
             health = value;
             HealthAnimation.Instance.SetHealth(health / MaxHealth);
@@ -293,7 +293,7 @@ public class Hero : Singleton<Hero>
             }
         }
         Debug.Log($"Hero recives damage {attack.BasePower} + {weightedAdvantage}");
-        int totalDamage = attack.BasePower + (int)weightedAdvantage;
+        int totalDamage = attack.BasePower + (int)(weightedAdvantage / 100.0f);
         if(totalDamage < 0) totalDamage = 0;
         CurrentHealth -= totalDamage;
         return totalDamage;
