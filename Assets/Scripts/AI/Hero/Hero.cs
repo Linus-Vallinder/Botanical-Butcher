@@ -292,8 +292,10 @@ public class Hero : Singleton<Hero>
                     break;
             }
         }
-        Debug.Log($"Hero recives damage {attack.BasePower} + {weightedAdvantage}");
-        int totalDamage = attack.BasePower + (int)weightedAdvantage;
+        float xpModifier = XP/100;
+        if ( xpModifier < 1.0f ) xpModifier = 1f;
+        Debug.Log($"Hero recives damage {attack.BasePower} * {xpModifier} + {weightedAdvantage}");
+        int totalDamage = (int) (( attack.BasePower * xpModifier ) + weightedAdvantage );
         if(totalDamage < 0) totalDamage = 0;
         CurrentHealth -= totalDamage;
         return totalDamage;
