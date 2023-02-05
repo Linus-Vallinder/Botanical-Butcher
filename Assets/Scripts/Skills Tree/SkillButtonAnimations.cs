@@ -143,6 +143,7 @@ public class SkillButtonAnimations : MonoBehaviour
         }
         skillName.color = gold;
         skillIcon.material = goldMaterial;
+        AudioManager.Instance.PlaySound("SkillClick");
     }
 
     public void LockSkill()

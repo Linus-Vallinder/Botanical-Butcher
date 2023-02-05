@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthAnimation : Singleton<HealthAnimation>
 {
+    [SerializeField] AudioClip[] hurtClips;
     [SerializeField] bool debug;
     [SerializeField] Transform healthBar;
     [SerializeField] float animSpeed;
@@ -33,6 +34,7 @@ public class HealthAnimation : Singleton<HealthAnimation>
     /// <param name="newValue">1 = 100%</param>
     public void SetHealth(float newValue)
     {
+        AudioManager.Instance.PlayRandomSoundFromArray(hurtClips);
         targetValue = newValue;
     }
 }

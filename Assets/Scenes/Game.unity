@@ -306,6 +306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d91bce3bd525e4180818dcceb3f7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurtClips:
+  - {fileID: 8300000, guid: e7d27a8192ca5a44e92305e90173e8ca, type: 3}
+  - {fileID: 8300000, guid: baaed5e150bd47a4dbaeef253c9d3ed7, type: 3}
+  - {fileID: 8300000, guid: a59eb5919c6e2ba4aaeebb8b85edbef1, type: 3}
   debug: 0
   healthBar: {fileID: 1295581286}
   animSpeed: 2
