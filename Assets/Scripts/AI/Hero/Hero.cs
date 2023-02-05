@@ -292,7 +292,7 @@ public class Hero : Singleton<Hero>
                     break;
             }
         }
-        float xpModifier = XP/100;
+        float xpModifier = XP/20;
         if ( xpModifier < 1.0f ) xpModifier = 1f;
         Debug.Log($"Hero recives damage {attack.BasePower} * {xpModifier} + {weightedAdvantage}");
         int totalDamage = (int) (( attack.BasePower * xpModifier ) + weightedAdvantage );
